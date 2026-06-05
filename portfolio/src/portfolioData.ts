@@ -154,6 +154,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'devia-crm',
     name: 'DevIA CRM',
+    tagline: 'Construction Management with AI',
     category: 'Platforms',
     summary: 'Construction management SaaS with a tab-based UX, AI assistant flows, and business tooling for field operations.',
     tags: ['React', 'FastAPI', 'MongoDB', 'Google Calendar', 'AI assistant'],
@@ -168,6 +169,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'corestone',
     name: 'Corestone',
+    tagline: 'AI Essay Evaluation Platform',
     category: 'AI Systems',
     summary: 'AI-powered essay evaluation platform for IBDP Extended Essays and TOK submissions.',
     tags: ['React', 'FastAPI', 'OpenAI', 'Stripe', 'MongoDB'],
@@ -182,6 +184,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'aiassessment',
     name: 'EduAssess',
+    tagline: 'AI-Powered Assessment Generation',
     category: 'AI Systems',
     summary: 'Stateful, conversational assessment agent that turns teacher intent into curriculum-aligned questions.',
     tags: ['LangGraph', 'LangChain', 'FastAPI', 'MongoDB Atlas', 'OpenAI'],
@@ -196,6 +199,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'aichatbot',
     name: 'AI Chatbot',
+    tagline: 'Conversational AI System',
     category: 'AI Systems',
     summary: 'Archived AI chatbot concept kept visible in the portfolio archive.',
     tags: ['AI', 'Chat', 'Automation'],
@@ -205,6 +209,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'aitherapy',
     name: 'AI Therapy',
+    tagline: 'Wellness-Focused AI Support',
     category: 'AI Systems',
     summary: 'Archived wellness-focused AI concept for guided interactions and support flows.',
     tags: ['AI', 'Voice', 'Workflow'],
@@ -214,6 +219,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'documentai',
     name: 'Document AI',
+    tagline: 'Document Intelligence System',
     category: 'AI Systems',
     summary: 'Document intelligence concept for extracting and organizing information from files.',
     tags: ['AI', 'Documents', 'Extraction'],
@@ -223,6 +229,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'retroai',
     name: 'RetroAI',
+    tagline: 'Retro-Styled AI Experience',
     category: 'AI Systems',
     summary: 'Retro-styled AI concept positioned for an expressive product experience.',
     tags: ['AI', 'Creative UX', 'Product'],
@@ -232,6 +239,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'lifetrek',
     name: 'LifeTrek',
+    tagline: 'Life Planning & Progress Tracking',
     category: 'Platforms',
     summary: 'Life-planning concept for tracking progress and turning goals into visible milestones.',
     tags: ['Planning', 'Tracking', 'Productivity'],
@@ -241,6 +249,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'milestonely',
     name: 'Milestonely',
+    tagline: 'Milestone Tracking Platform',
     category: 'Platforms',
     summary: 'Milestone tracking concept focused on progress visibility and structured delivery.',
     tags: ['Milestones', 'Planning', 'Delivery'],
@@ -250,6 +259,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'pocketshrink',
     name: 'PocketShrink',
+    tagline: 'Personal Productivity Utility',
     category: 'Platforms',
     summary: 'Compact utility concept for personal productivity or budget-focused workflows.',
     tags: ['Utility', 'Personal tools', 'Planning'],
@@ -259,6 +269,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'storybook',
     name: 'Storybook',
+    tagline: 'Story & Documentation Platform',
     category: 'Platforms',
     summary: 'Story-focused project note retained in the archive for future expansion.',
     tags: ['Documentation', 'Content', 'Product'],
@@ -268,6 +279,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'antlix',
     name: 'Antlix',
+    tagline: 'Workflow Automation System',
     category: 'Automation',
     summary: 'Archived automation concept stored in the project archive for reference.',
     tags: ['Automation', 'Systems', 'Workflow'],
@@ -277,6 +289,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'motoscout-automation',
     name: 'MotoScout Automation',
+    tagline: 'Browser Task Automation',
     category: 'Automation',
     summary: 'Automation concept for streamlining repetitive Motoscout tasks and workflows.',
     tags: ['Automation', 'Browser', 'Ops'],
@@ -286,6 +299,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'schedular',
     name: 'Schedular',
+    tagline: 'Scheduling & Time Management',
     category: 'Automation',
     summary: 'Scheduling utility concept centered on clear planning and time management.',
     tags: ['Scheduling', 'Planning', 'Utility'],
@@ -295,6 +309,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'cvformatter',
     name: 'CV Formatter',
+    tagline: 'Professional CV Formatting Tool',
     category: 'Creative Tools',
     summary: 'Utility concept for structuring, formatting, and polishing CV content.',
     tags: ['Docs', 'Formatting', 'Utility'],
@@ -304,6 +319,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'drawingpic',
     name: 'DrawingPic',
+    tagline: 'Sketch to Visual Converter',
     category: 'Creative Tools',
     summary: 'Creative concept for turning sketches, drawings, or ideas into polished visuals.',
     tags: ['Creative', 'Visuals', 'AI'],
@@ -313,6 +329,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'faceswap',
     name: 'FaceSwap',
+    tagline: 'Face Transformation Tool',
     category: 'Creative Tools',
     summary: 'Media editing concept for face transformation workflows and visual experimentation.',
     tags: ['Creative', 'Media', 'AI'],
@@ -322,6 +339,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'healyourhuman',
     name: 'Heal Your Human',
+    tagline: 'Wellness & Support Platform',
     category: 'Creative Tools',
     summary: 'Human-centered concept positioned around support, reflection, or wellness.',
     tags: ['Wellness', 'Creative', 'Experience'],
@@ -331,6 +349,7 @@ export const projects: ProjectItem[] = [
   {
     id: 'styleclone',
     name: 'StyleClone',
+    tagline: 'Style Reproduction Tool',
     category: 'Creative Tools',
     summary: 'Style reproduction concept for visual experimentation and clone-based workflows.',
     tags: ['Creative', 'Style', 'AI'],
