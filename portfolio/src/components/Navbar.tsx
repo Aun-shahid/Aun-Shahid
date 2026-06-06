@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { sectionTabs } from '../data/portfolioData'
 import type { SectionTabId } from '../data/portfolioData'
-import { FaBriefcase, FaMoon, FaSun } from 'react-icons/fa'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
 type NavbarProps = {
   activeSection: SectionTabId
@@ -54,14 +54,6 @@ export default function Navbar({ activeSection, darkMode, onNavigate, onToggleTh
           })}
           <button
             type="button"
-            className="ml-2 inline-flex items-center gap-2 rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-extrabold text-white shadow-lg shadow-teal-700/15 transition hover:-translate-y-0.5 hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-            onClick={() => handleNav('contact')}
-          >
-            <FaBriefcase aria-hidden="true" />
-            Hire Me
-          </button>
-          <button
-            type="button"
             className="ml-1 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-200"
             aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             onClick={onToggleTheme}
@@ -106,14 +98,6 @@ export default function Navbar({ activeSection, darkMode, onNavigate, onToggleTh
             </button>
             )
           })}
-          <button
-            type="button"
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-teal-700 px-4 py-3 text-sm font-extrabold text-white"
-            onClick={() => handleNav('contact')}
-          >
-            <FaBriefcase aria-hidden="true" />
-            Hire Me
-          </button>
           <button
             type="button"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-extrabold text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"

@@ -363,7 +363,7 @@ export const projectFilters: ProjectFilterId[] = ['All', 'AI Systems', 'Platform
 export const contactLinks = [
   { label: 'Rawalpindi', href: 'https://www.google.com/maps/search/Rawalpindi', icon: FaMapMarkerAlt },
   { label: '+92 303 4486565', href: 'tel:+923034486565', icon: FaPhoneAlt },
-  { label: 'aun.shahid113@gmail.com', href: 'mailto:aun.shahid113@gmail.com', icon: FaEnvelope },
+  { label: 'aun.shahid114@gmail.com', href: 'mailto:aun.shahid114@gmail.com', icon: FaEnvelope },
   { label: 'linkedin.com/in/aun-shahid', href: 'https://www.linkedin.com/in/aun-shahid', icon: FaLinkedin },
   { label: 'github.com/Aun-shahid', href: 'https://github.com/Aun-shahid', icon: FaGithub },
 ]
