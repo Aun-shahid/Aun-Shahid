@@ -1,4 +1,5 @@
 import { contactLinks } from '../data/portfolioData'
+import GitHubActivity from './GitHubActivity'
 
 export default function Contact() {
   return (
@@ -42,6 +43,12 @@ export default function Contact() {
               </a>
             )
           })}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <div className="w-full">
+            <GitHubActivity />
+          </div>
         </div>
       <div className="grid gap-5 lg:grid-cols-2">
         <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">

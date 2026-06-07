@@ -125,3 +125,73 @@ a {
   background: rgba(20, 184, 166, 0.22);
   color: #0f172a;
 }
+/* GitHub Calendar Styling */
+.react-github-calendar {
+  font-size: 14px;
+  width: 100%;
+}
+
+.react-github-calendar__month-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.dark .react-github-calendar__month-label {
+  color: #cbd5e1;
+}
+
+.react-github-calendar__day {
+  border-radius: 2px;
+}
+
+.react-github-calendar__day:hover {
+  stroke: #0f766e;
+  stroke-width: 2;
+}
+
+.dark .react-github-calendar__day:hover {
+  stroke: #5eead4;
+  stroke-width: 2;
+}
+
+/* Contribution levels */
+.react-github-calendar__day[data-level="0"] {
+  fill: #ebedf0;
+}
+
+.react-github-calendar__day[data-level="1"] {
+  fill: #7ee787;
+}
+
+.react-github-calendar__day[data-level="2"] {
+  fill: #239a3b;
+}
+
+.react-github-calendar__day[data-level="3"] {
+  fill: #0f766e;
+}
+
+.react-github-calendar__day[data-level="4"] {
+  fill: #04502a;
+}
+
+.dark .react-github-calendar__day[data-level="0"] {
+  fill: #161b22;
+}
+
+.dark .react-github-calendar__day[data-level="1"] {
+  fill: #0e4429;
+}
+
+.dark .react-github-calendar__day[data-level="2"] {
+  fill: #006d32;
+}
+
+.dark .react-github-calendar__day[data-level="3"] {
+  fill: #26a641;
+}
+
+.dark .react-github-calendar__day[data-level="4"] {
+  fill: #39d353;
+}

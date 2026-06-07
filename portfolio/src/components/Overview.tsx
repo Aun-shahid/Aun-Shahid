@@ -11,6 +11,7 @@ import {
   FaRocket,
   FaRoute,
 } from 'react-icons/fa'
+import PortfolioInsights from './PortfolioInsights'
 
 const overviewCards = [
   {
@@ -81,6 +82,8 @@ export default function Overview({ onNavigate }: OverviewProps) {
           )
         })}
       </div>
+
+      <PortfolioInsights />
 
       <section className="py-6">
         <div className="mb-5">
