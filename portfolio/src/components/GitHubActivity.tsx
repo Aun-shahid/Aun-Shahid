@@ -65,7 +65,7 @@ export default function GitHubActivity() {
       href={data.profile_url}
       target="_blank"
       rel="noreferrer"
-      className="block space-y-4 rounded-lg border border-slate-200 bg-white p-5 text-center transition hover:border-teal-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-300/60"
+      className="block w-full min-w-0 max-w-full space-y-4 overflow-hidden rounded-lg border border-slate-200 bg-white p-4 text-center transition hover:border-teal-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-300/60 sm:p-5"
     >
       <div className="flex flex-col items-center gap-3">
         <img
@@ -86,11 +86,13 @@ export default function GitHubActivity() {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <GitHubCalendar
-          username="Aun-shahid"
-          year={2026}
-        />
+      <div className="github-calendar-scroll -mx-1 w-full max-w-full overflow-x-auto pb-3 sm:mx-0">
+        <div className="github-calendar-frame align-top">
+          <GitHubCalendar
+            username="Aun-shahid"
+            year={2026}
+          />
+        </div>
       </div>
 
       <div className="grid grid-cols-3 gap-3 border-t border-slate-200 pt-4 dark:border-white/10">

@@ -41,7 +41,7 @@ export default function Education() {
       </div>
 
       <div className="relative">
-        <div className="absolute bottom-0 left-[9px] top-0 w-px bg-gradient-to-b from-blue-500 to-amber-400 sm:left-[41px]" />
+        <div className="absolute bottom-0 left-[12px] top-0 w-px bg-gradient-to-b from-blue-500 to-amber-400 sm:left-[41px]" />
 
         <div className="divide-y divide-slate-200/80 dark:divide-white/10">
           {educationRows.map((item) => {
@@ -54,7 +54,7 @@ export default function Education() {
                 <div className="hidden pt-1 text-sm font-extrabold text-slate-500 dark:text-slate-400 sm:block">
                   {item.year}
                 </div>
-                <div className={`absolute left-0 top-8 flex h-5 w-5 items-center justify-center rounded-full ${item.accent} ring-8 ring-slate-50 dark:ring-slate-950 sm:left-8`}>
+                <div className={`absolute left-0 top-12 flex h-5 w-5 items-center justify-center rounded-full ${item.accent} ring-transparent sm:left-8`}>
                   <Icon aria-hidden="true" className="h-2.5 w-2.5 text-white" />
                 </div>
 

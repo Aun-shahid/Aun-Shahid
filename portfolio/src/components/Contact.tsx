@@ -1,5 +1,6 @@
 import { contactLinks } from '../data/portfolioData'
 import GitHubActivity from './GitHubActivity'
+import PortfolioInsights from './PortfolioInsights'
 
 export default function Contact() {
   return (
@@ -45,8 +46,12 @@ export default function Contact() {
           })}
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <div className="w-full">
+        <div className="mt-8">
+          <PortfolioInsights />
+        </div>
+
+        <div className="mt-8 flex min-w-0 justify-center">
+          <div className="w-full min-w-0">
             <GitHubActivity />
           </div>
         </div>

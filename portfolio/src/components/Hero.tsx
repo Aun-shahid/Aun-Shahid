@@ -62,7 +62,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         </h1>
 
         <p
-          className="mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400 sm:text-lg"
+          className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-400 sm:text-lg"
           aria-label={heroDescription}
         >
           <AnimatedLetters text={heroDescription} start="760ms" step="9ms" />
@@ -74,7 +74,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             className="rounded-lg bg-teal-700 px-5 py-3 text-sm font-extrabold text-white shadow-lg shadow-teal-700/15 transition hover:-translate-y-0.5 hover:bg-teal-800"
             onClick={() => onNavigate('projects')}
           >
-            Browse Projects
+            See My Work
           </button>
           <button
             type="button"

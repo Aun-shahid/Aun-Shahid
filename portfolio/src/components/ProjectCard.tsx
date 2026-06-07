@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt, FaGithub, FaCode } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaGithub, FaCode, FaInfoCircle } from 'react-icons/fa'
 import { getProjectVisual } from '../data/projects'
 import type { Project } from '../data/projects'
 import ProjectDeviceMockup from './ProjectDeviceMockup'
@@ -90,12 +90,24 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
         </div>
 
         <div className="mt-5 flex flex-wrap gap-2">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-3 py-2 text-xs font-extrabold text-white transition hover:bg-teal-800"
+            onClick={(e) => {
+              e.stopPropagation()
+              onClick()
+            }}
+            aria-label={`View details for ${project.name}`}
+          >
+            <FaInfoCircle aria-hidden="true" />
+            <span>Details</span>
+          </button>
           {project.url && (
             <a
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-3 py-2 text-xs font-extrabold text-white transition hover:bg-teal-800"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-slate-700 transition hover:border-teal-300 hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-white"
               onClick={(e) => e.stopPropagation()}
               aria-label={`Visit ${project.name}`}
             >
