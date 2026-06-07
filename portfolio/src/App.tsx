@@ -10,12 +10,61 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+const sectionPathById: Record<SectionTabId, string> = {
+  overview: 'overview',
+  experience: 'experience',
+  education: 'education',
+  projects: 'projects',
+  skills: 'skills',
+  contact: 'contact',
+}
+
+function appBasePath() {
+  return import.meta.env.BASE_URL.replace(/\/$/, '')
+}
+
+function sectionFromPath(pathname: string): SectionTabId {
+  const basePath = appBasePath()
+  const relativePath = pathname
+    .replace(basePath, '')
+    .replace(/^\//, '')
+    .replace(/\/$/, '')
+
+  const section = Object.entries(sectionPathById).find(([, path]) => path === relativePath)?.[0]
+  return (section as SectionTabId | undefined) ?? 'overview'
+}
+
+function pathForSection(section: SectionTabId) {
+  const basePath = appBasePath()
+  return `${basePath}/${sectionPathById[section]}`
+}
+
 function App() {
-  const [activeSection, setActiveSection] = useState<SectionTabId>('overview')
+  const [activeSection, setActiveSection] = useState<SectionTabId>(() => sectionFromPath(window.location.pathname))
   const [darkMode, setDarkMode] = useState(() => {
     const storedTheme = localStorage.getItem('portfolioTheme')
     return storedTheme ? storedTheme === 'dark' : true
   })
+
+  const handleNavigate = (section: SectionTabId) => {
+    setActiveSection(section)
+
+    const nextPath = pathForSection(section)
+    if (window.location.pathname !== nextPath) {
+      window.history.pushState({ section }, '', nextPath)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setActiveSection(sectionFromPath(window.location.pathname))
+      window.scrollTo({ top: 0 })
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('portfolioTheme', darkMode ? 'dark' : 'light')
@@ -28,15 +77,15 @@ function App() {
       <Navbar
         activeSection={activeSection}
         darkMode={darkMode}
-        onNavigate={setActiveSection}
+        onNavigate={handleNavigate}
         onToggleTheme={() => setDarkMode((value) => !value)}
       />
 
       <main className="mx-auto w-[min(1440px,calc(100%-2rem))] py-8 sm:w-[min(1440px,calc(100%-3rem))] lg:py-12">
-        {activeSection === 'overview' && <Hero onNavigate={setActiveSection} />}
+        {activeSection === 'overview' && <Hero onNavigate={handleNavigate} />}
 
         <div className={activeSection === 'overview' ? '' : 'pt-2'} aria-live="polite">
-          {activeSection === 'overview' && <Overview onNavigate={setActiveSection} />}
+          {activeSection === 'overview' && <Overview onNavigate={handleNavigate} />}
           {activeSection === 'experience' && <Experience />}
           {activeSection === 'education' && <Education />}
           {activeSection === 'projects' && <Projects />}
@@ -45,7 +94,7 @@ function App() {
         </div>
       </main>
 
-      <Footer onNavigate={setActiveSection} />
+      <Footer onNavigate={handleNavigate} />
     </div>
   )
 }
