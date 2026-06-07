@@ -5,9 +5,9 @@
 
 :root {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  color: #172033;
-  background: #f6f8fb;
-  color-scheme: light;
+  color: #e2e8f0;
+  background: #020617;
+  color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +32,55 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f6f8fb;
+  background: #020617;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 118, 110, 0.72) rgba(226, 232, 240, 0.9);
+}
+
+html.dark {
+  scrollbar-color: rgba(20, 184, 166, 0.72) rgba(15, 23, 42, 0.9);
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f8fafc, #e2e8f0);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #14b8a6, #0f766e);
+  border: 3px solid #f8fafc;
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0f766e, #115e59);
+}
+
+html::-webkit-scrollbar-corner {
+  background: #f8fafc;
+}
+
+html.dark::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #020617, #0f172a);
+}
+
+html.dark::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2dd4bf, #0f766e);
+  border-color: #020617;
+}
+
+html.dark::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5eead4, #14b8a6);
+}
+
+html.dark::-webkit-scrollbar-corner {
+  background: #020617;
 }
 
 .letter-load {

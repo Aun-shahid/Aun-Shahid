@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import type { SectionTabId } from './data/portfolioData'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -12,7 +12,16 @@ import Footer from './components/Footer'
 
 function App() {
   const [activeSection, setActiveSection] = useState<SectionTabId>('overview')
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(() => {
+    const storedTheme = localStorage.getItem('portfolioTheme')
+    return storedTheme ? storedTheme === 'dark' : true
+  })
+
+  useEffect(() => {
+    localStorage.setItem('portfolioTheme', darkMode ? 'dark' : 'light')
+    document.documentElement.style.colorScheme = darkMode ? 'dark' : 'light'
+    document.documentElement.classList.toggle('dark', darkMode)
+  }, [darkMode])
 
   return (
     <div className={`${darkMode ? 'dark' : ''} min-h-screen bg-slate-50 text-slate-950 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100`}>
