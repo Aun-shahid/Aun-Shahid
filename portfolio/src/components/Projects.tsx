@@ -98,7 +98,10 @@ export default function Projects() {
 
             return (
               <SwiperSlide key={project.id} className="!h-auto !w-[90%] max-w-6xl sm:!w-[84%] xl:!w-[78%]">
-                <article className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-slate-950 shadow-xl shadow-slate-900/10">
+                <article
+                  className="group h-full cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-slate-950 shadow-xl shadow-slate-900/10"
+                  onClick={() => setSelectedProject(project)}
+                >
                   {project.screenshots ? (
                     <div className="relative h-full min-h-[560px] overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 p-5 sm:p-7 lg:min-h-[500px] lg:p-9">
                       {project.url && (
@@ -106,6 +109,7 @@ export default function Projects() {
                           href={project.url}
                           target="_blank"
                           rel="noreferrer"
+                          onClick={(event) => event.stopPropagation()}
                           className="absolute right-5 top-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/25 sm:right-8 sm:top-8"
                           aria-label={`Visit ${project.name}`}
                         >
@@ -142,7 +146,10 @@ export default function Projects() {
                           <div className="mt-6 flex flex-wrap gap-3">
                             <button
                               type="button"
-                              onClick={() => setSelectedProject(project)}
+                                onClick={(event) => {
+                                  event.stopPropagation()
+                                  setSelectedProject(project)
+                                }}
                               className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
                             >
                               View Details
@@ -152,6 +159,7 @@ export default function Projects() {
                                   href={project.url}
                                   target="_blank"
                                   rel="noreferrer"
+                                  onClick={(event) => event.stopPropagation()}
                                   className="inline-flex items-center gap-2 rounded-lg bg-teal-600 px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-teal-700"
                                 >
                                   <FaExternalLinkAlt aria-hidden="true" />
@@ -163,6 +171,7 @@ export default function Projects() {
                                   href={project.githubUrl}
                                   target="_blank"
                                   rel="noreferrer"
+                                  onClick={(event) => event.stopPropagation()}
                                   className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-5 py-3 text-sm font-extrabold text-white backdrop-blur transition hover:bg-white/20"
                                 >
                                   <FaGithub aria-hidden="true" />
@@ -174,6 +183,7 @@ export default function Projects() {
                                   href={project.apiUrl}
                                   target="_blank"
                                   rel="noreferrer"
+                                  onClick={(event) => event.stopPropagation()}
                                   className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-5 py-3 text-sm font-extrabold text-white backdrop-blur transition hover:bg-white/20"
                                 >
                                   <FaCode aria-hidden="true" />
@@ -196,6 +206,7 @@ export default function Projects() {
                           href={project.url}
                           target="_blank"
                           rel="noreferrer"
+                          onClick={(event) => event.stopPropagation()}
                           className="absolute right-5 top-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/25 sm:right-8 sm:top-8"
                           aria-label={`Visit ${project.name}`}
                         >
@@ -218,7 +229,10 @@ export default function Projects() {
                           <p className="mt-5 max-w-3xl text-base leading-8 text-white/85 sm:text-lg">{project.summary}</p>
                           <button
                             type="button"
-                            onClick={() => setSelectedProject(project)}
+                            onClick={(event) => {
+                              event.stopPropagation()
+                              setSelectedProject(project)
+                            }}
                             className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
                           >
                             View Details
