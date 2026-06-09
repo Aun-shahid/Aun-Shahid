@@ -175,31 +175,6 @@ a {
   color: #0f172a;
 }
 
-.project-showcase-swiper .swiper-slide {
-  transition: filter 360ms ease, opacity 360ms ease, scale 360ms ease;
-}
-
-.project-showcase-swiper .swiper-slide:not(.swiper-slide-active) {
-  filter: blur(2px);
-  opacity: 0.58;
-  scale: 0.94;
-}
-
-.project-showcase-swiper .swiper-slide-active {
-  filter: none;
-  opacity: 1;
-  scale: 1;
-}
-
-.project-showcase-swiper .swiper-pagination-bullet {
-  background: #0f766e;
-  opacity: 0.25;
-}
-
-.project-showcase-swiper .swiper-pagination-bullet-active {
-  opacity: 1;
-}
-
 .project-details-scroll {
   scrollbar-width: thin;
   scrollbar-color: rgba(15, 118, 110, 0.72) rgba(15, 23, 42, 0.08);

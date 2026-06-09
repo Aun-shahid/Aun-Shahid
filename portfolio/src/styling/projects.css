@@ -1,0 +1,260 @@
+.project-carousel-stage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.project-carousel-card {
+  border-color: rgba(255, 255, 255, 0.46);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08)),
+    rgba(15, 23, 42, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 26px 70px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+.dark .project-carousel-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(2, 6, 23, 0.8);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.26);
+}
+
+.project-carousel-card-shell {
+  background:
+    radial-gradient(circle at 22% 18%, rgba(45, 212, 191, 0.2), transparent 32%),
+    radial-gradient(circle at 86% 8%, rgba(59, 130, 246, 0.18), transparent 28%),
+    linear-gradient(135deg, rgba(2, 6, 23, 0.88), rgba(15, 23, 42, 0.8) 48%, rgba(19, 78, 74, 0.74));
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+.dark .project-carousel-card-shell {
+  background:
+    radial-gradient(circle at 22% 18%, rgba(45, 212, 191, 0.22), transparent 32%),
+    radial-gradient(circle at 86% 8%, rgba(59, 130, 246, 0.2), transparent 28%),
+    linear-gradient(135deg, rgb(2, 6, 23), rgb(15, 23, 42) 50%, rgb(19, 78, 74));
+}
+
+.project-carousel-image-shell::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(10px) saturate(125%);
+  -webkit-backdrop-filter: blur(10px) saturate(125%);
+  content: '';
+}
+
+.project-carousel-image-shell > * {
+  z-index: 1;
+}
+
+.project-showcase-swiper .swiper-slide {
+  transition: filter 360ms ease, opacity 360ms ease, scale 360ms ease;
+}
+
+.project-showcase-swiper .swiper-slide:not(.swiper-slide-active) {
+  filter: blur(2px);
+  opacity: 0.58;
+  scale: 0.94;
+}
+
+.project-showcase-swiper .swiper-slide-active {
+  filter: none;
+  opacity: 1;
+  scale: 1;
+}
+
+.project-showcase-swiper .swiper-pagination-bullet {
+  background: #0f766e;
+  opacity: 0.25;
+}
+
+.project-showcase-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.project-grid-card {
+  border-color: rgba(255, 255, 255, 0.58);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.42)),
+    rgba(255, 255, 255, 0.38);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 18px 48px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(20px) saturate(145%);
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+}
+
+.project-grid-card-body {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.28));
+}
+
+.dark .project-grid-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+}
+
+.dark .project-grid-card-body {
+  background: rgba(2, 6, 23, 0.12);
+}
+
+.project-details-rain {
+  --rain-c: rgba(20, 184, 166, 0.28);
+  --rain-bg: rgba(248, 250, 252, 0.88);
+  background-color: var(--rain-bg);
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 2px, rgba(255, 255, 255, 0.68) 2px),
+    radial-gradient(4px 100px at 0px 235px, var(--rain-c), transparent),
+    radial-gradient(4px 100px at 300px 235px, var(--rain-c), transparent),
+    radial-gradient(1.5px 1.5px at 150px 117.5px, var(--rain-c) 100%, transparent 150%),
+    radial-gradient(4px 100px at 0px 252px, var(--rain-c), transparent),
+    radial-gradient(4px 100px at 300px 252px, var(--rain-c), transparent),
+    radial-gradient(1.5px 1.5px at 150px 126px, var(--rain-c) 100%, transparent 150%),
+    radial-gradient(4px 100px at 0px 150px, rgba(56, 189, 248, 0.22), transparent),
+    radial-gradient(4px 100px at 300px 150px, rgba(56, 189, 248, 0.22), transparent),
+    radial-gradient(1.5px 1.5px at 150px 75px, rgba(56, 189, 248, 0.26) 100%, transparent 150%),
+    radial-gradient(4px 100px at 0px 204px, rgba(245, 158, 11, 0.12), transparent),
+    radial-gradient(4px 100px at 300px 204px, rgba(245, 158, 11, 0.12), transparent),
+    radial-gradient(1.5px 1.5px at 150px 102px, rgba(245, 158, 11, 0.16) 100%, transparent 150%);
+  background-size:
+    8px 8px,
+    300px 235px,
+    300px 235px,
+    300px 235px,
+    300px 252px,
+    300px 252px,
+    300px 252px,
+    300px 150px,
+    300px 150px,
+    300px 150px,
+    300px 204px,
+    300px 204px,
+    300px 204px;
+  background-attachment: local;
+  animation: project-rain 150s linear infinite;
+  isolation: isolate;
+}
+
+.dark .project-details-rain {
+  --rain-c: rgba(56, 189, 248, 0.34);
+  --rain-bg: rgba(2, 6, 23, 0.96);
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 2px, rgba(2, 6, 23, 0.86) 2px),
+    radial-gradient(4px 100px at 0px 235px, var(--rain-c), transparent),
+    radial-gradient(4px 100px at 300px 235px, var(--rain-c), transparent),
+    radial-gradient(1.5px 1.5px at 150px 117.5px, var(--rain-c) 100%, transparent 150%),
+    radial-gradient(4px 100px at 0px 252px, var(--rain-c), transparent),
+    radial-gradient(4px 100px at 300px 252px, var(--rain-c), transparent),
+    radial-gradient(1.5px 1.5px at 150px 126px, var(--rain-c) 100%, transparent 150%),
+    radial-gradient(4px 100px at 0px 150px, rgba(20, 184, 166, 0.22), transparent),
+    radial-gradient(4px 100px at 300px 150px, rgba(20, 184, 166, 0.22), transparent),
+    radial-gradient(1.5px 1.5px at 150px 75px, rgba(20, 184, 166, 0.26) 100%, transparent 150%),
+    radial-gradient(4px 100px at 0px 204px, rgba(245, 158, 11, 0.1), transparent),
+    radial-gradient(4px 100px at 300px 204px, rgba(245, 158, 11, 0.1), transparent),
+    radial-gradient(1.5px 1.5px at 150px 102px, rgba(245, 158, 11, 0.14) 100%, transparent 150%);
+}
+
+.project-detail-glass-section {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(255, 255, 255, 0.42);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.08), transparent 12rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(226, 232, 240, 0.08));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    0 16px 34px rgba(15, 23, 42, 0.05);
+  backdrop-filter: blur(8px) saturate(135%);
+  -webkit-backdrop-filter: blur(8px) saturate(135%);
+}
+
+.project-detail-glass-section::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 34%, rgba(255, 255, 255, 0.06));
+  content: '';
+}
+
+.project-detail-glass-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dark .project-detail-glass-section {
+  border-color: rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(45, 212, 191, 0.1), transparent 12rem),
+    linear-gradient(135deg, rgba(30, 41, 59, 0.18), rgba(2, 6, 23, 0.08));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 18px 38px rgba(0, 0, 0, 0.1);
+}
+
+.dark .project-detail-glass-section::before {
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.07), transparent 34%, rgba(45, 212, 191, 0.05));
+}
+
+.project-detail-glass-chip {
+  border-color: rgba(255, 255, 255, 0.46);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(226, 232, 240, 0.08));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(7px) saturate(135%);
+  -webkit-backdrop-filter: blur(7px) saturate(135%);
+}
+
+.dark .project-detail-glass-chip {
+  border-color: rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(135deg, rgba(30, 41, 59, 0.22), rgba(2, 6, 23, 0.08));
+}
+
+@keyframes project-rain {
+  0% {
+    background-position:
+      0 0,
+      0px 220px,
+      3px 220px,
+      151.5px 337.5px,
+      25px 24px,
+      28px 24px,
+      176.5px 150px,
+      50px 16px,
+      53px 16px,
+      201.5px 91px,
+      100px 19px,
+      103px 19px,
+      251.5px 121px;
+  }
+
+  to {
+    background-position:
+      0 0,
+      0px 6800px,
+      3px 6800px,
+      151.5px 6917.5px,
+      25px 13632px,
+      28px 13632px,
+      176.5px 13758px,
+      50px 5416px,
+      53px 5416px,
+      201.5px 5491px,
+      100px 5119px,
+      103px 5119px,
+      251.5px 5221px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-details-rain {
+    animation: none;
+  }
+}

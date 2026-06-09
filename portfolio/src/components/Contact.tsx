@@ -14,7 +14,7 @@ export default function Contact() {
               Let's build something together. Reach out through any channel.
             </h2>
           </div>
-          <span className="w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+          <span className="ice-glass-chip w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
             Open to work
           </span>
         </div>
@@ -34,7 +34,7 @@ export default function Contact() {
             return (
               <a
                 key={item.label}
-                className="flex min-w-0 items-center gap-3 rounded-lg border border-slate-200 bg-white p-4 font-extrabold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-300 hover:bg-white hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-teal-300/60 dark:hover:text-teal-200"
+                className="ice-glass-soft flex min-w-0 items-center gap-3 rounded-lg border border-slate-200 bg-white p-4 font-extrabold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-300 hover:bg-white hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-teal-300/60 dark:hover:text-teal-200"
                 href={item.href}
                 target={isExternal ? '_blank' : undefined}
                 rel={isExternal ? 'noreferrer' : undefined}
@@ -56,7 +56,7 @@ export default function Contact() {
           </div>
         </div>
       <div className="grid gap-5 lg:grid-cols-2">
-        <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+        <article className="ice-glass-card rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
           <h3 className="font-extrabold text-slate-950 dark:text-white">What I can build for you</h3>
           <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-600 dark:text-slate-400">
             <li>AI-powered SaaS products (LLM, RAG, agents)</li>
@@ -66,7 +66,7 @@ export default function Contact() {
           </ul>
         </article>
 
-        <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+        <article className="ice-glass-card rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
           <h3 className="font-extrabold text-slate-950 dark:text-white">Availability</h3>
           <p className="mt-4 leading-8 text-slate-600 dark:text-slate-400">
             Currently open for remote freelance and contract work. Response time is typically within 24 hours.

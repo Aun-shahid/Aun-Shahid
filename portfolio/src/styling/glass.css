@@ -1,0 +1,142 @@
+.site-glass-nav,
+.site-glass-footer {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.14), transparent 18rem),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.78), rgba(226, 232, 240, 0.46)),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.08), rgba(56, 189, 248, 0.06));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 18px 55px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+}
+
+.dark .site-glass-nav,
+.dark .site-glass-footer {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(45, 212, 191, 0.12), transparent 18rem),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.58)),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.08), rgba(56, 189, 248, 0.05));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 55px rgba(0, 0, 0, 0.24);
+}
+
+.site-glass-footer {
+  margin-top: 3rem;
+}
+
+.theme-toggle-orb {
+  position: relative;
+  display: inline-flex;
+  height: 1.35rem;
+  width: 1.35rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-circle {
+  position: relative;
+  display: block;
+  height: 1.18rem;
+  width: 1.18rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  box-shadow:
+    0 0 16px rgba(255, 140, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+  transition:
+    background 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+    box-shadow 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 0.3s ease;
+}
+
+.theme-toggle-crescent {
+  position: absolute;
+  right: -0.04rem;
+  top: -0.04rem;
+  height: 0.92rem;
+  width: 0.92rem;
+  border-radius: 999px;
+  background: #f8fbfd;
+  transform: scale(0);
+  transform-origin: top right;
+  transition:
+    transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.theme-toggle-orb--dark .theme-toggle-circle,
+.dark .theme-toggle-circle {
+  background: linear-gradient(40deg, #8983f7, #a3dafb 70%);
+  box-shadow:
+    0 0 16px rgba(163, 218, 251, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.theme-toggle-orb--dark .theme-toggle-crescent,
+.dark .theme-toggle-crescent {
+  background: #0b1120;
+  transform: scale(1);
+}
+
+button:hover .theme-toggle-circle {
+  transform: scale(1.08) rotate(8deg);
+}
+
+.ice-glass-card {
+  border-color: rgba(148, 163, 184, 0.24);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(45, 212, 191, 0.16), transparent 13rem),
+    radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.12), transparent 14rem),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.72), rgba(226, 232, 240, 0.42));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    0 18px 42px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+}
+
+.dark .ice-glass-card {
+  border-color: rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(45, 212, 191, 0.13), transparent 13rem),
+    radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.09), transparent 14rem),
+    linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.54));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 18px 42px rgba(2, 6, 23, 0.16);
+}
+
+.ice-glass-soft {
+  border-color: rgba(148, 163, 184, 0.22);
+  background:
+    linear-gradient(135deg, rgba(248, 250, 252, 0.64), rgba(226, 232, 240, 0.36)),
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.1), transparent 10rem);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+.dark .ice-glass-soft {
+  border-color: rgba(255, 255, 255, 0.11);
+  background:
+    linear-gradient(135deg, rgba(30, 41, 59, 0.58), rgba(15, 23, 42, 0.42)),
+    radial-gradient(circle at 0% 0%, rgba(45, 212, 191, 0.09), transparent 10rem);
+}
+
+.ice-glass-chip {
+  border-color: rgba(20, 184, 166, 0.24);
+  background:
+    linear-gradient(135deg, rgba(240, 253, 250, 0.76), rgba(226, 232, 240, 0.36));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(12px) saturate(135%);
+  -webkit-backdrop-filter: blur(12px) saturate(135%);
+}
+
+.dark .ice-glass-chip {
+  border-color: rgba(45, 212, 191, 0.2);
+  background:
+    linear-gradient(135deg, rgba(20, 184, 166, 0.16), rgba(15, 23, 42, 0.42));
+}

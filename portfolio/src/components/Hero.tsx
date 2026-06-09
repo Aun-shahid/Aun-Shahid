@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { contactLinks, heroStats, heroStrengths } from '../data/portfolioData'
+import { contactLinks, heroStrengths } from '../data/portfolioData'
 import type { SectionTabId } from '../data/portfolioData'
 
 type HeroProps = {
@@ -9,6 +9,59 @@ type HeroProps = {
 const heroName = 'Aun Shahid'
 const heroDescription =
   'I build complete software products across backend systems, modern frontends, automation, and applied AI. The work ranges from fast prototypes to production platforms with clean APIs, reliable data models, and deployable infrastructure.'
+
+const heroOrbitCards = [
+  {
+    title: 'Product Shape',
+    detail: 'Architecture, data model, API contract',
+    color: '142, 249, 252',
+  },
+  {
+    title: 'AI Core',
+    detail: 'RAG, agents, voice, documents',
+    color: '142, 252, 204',
+  },
+  {
+    title: 'Ship Ready',
+    detail: 'Frontend, backend, cloud delivery',
+    color: '142, 252, 157',
+  },
+  {
+    title: '20+',
+    detail: 'Projects shipped',
+    color: '215, 252, 142',
+  },
+  {
+    title: '10',
+    detail: 'Live products',
+    color: '252, 252, 142',
+  },
+  {
+    title: '2+',
+    detail: 'Years in AI engineering',
+    color: '252, 208, 142',
+  },
+  {
+    title: 'Backend',
+    detail: 'APIs, databases, auth flows',
+    color: '252, 142, 142',
+  },
+  {
+    title: 'Automation',
+    detail: 'Scrapers, workflows, agents',
+    color: '252, 142, 239',
+  },
+  {
+    title: 'Frontend',
+    detail: 'Fast interfaces, clean UX',
+    color: '204, 142, 252',
+  },
+  {
+    title: 'Cloud',
+    detail: 'Deployable infrastructure',
+    color: '142, 202, 252',
+  },
+]
 
 function AnimatedLetters({
   text,
@@ -48,7 +101,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <p className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.14em] text-teal-800 dark:border-teal-300/20 dark:bg-teal-300/10 dark:text-teal-200">
             Full Stack Engineer
           </p>
-          <span className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-600 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+          <span className="ice-glass-chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-600 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
             Available for product-focused work
           </span>
         </div>
@@ -95,7 +148,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                 href={item.href}
                 target={isExternal ? '_blank' : undefined}
                 rel={isExternal ? 'noreferrer' : undefined}
-                className="flex min-w-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-teal-300 hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-teal-300/60 dark:hover:text-teal-200"
+                className="ice-glass-soft flex min-w-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-teal-300 hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-teal-300/60 dark:hover:text-teal-200"
               >
                 <Icon aria-hidden="true" className="shrink-0 text-teal-700" />
                 <span className="truncate">{item.label}</span>
@@ -116,41 +169,32 @@ export default function Hero({ onNavigate }: HeroProps) {
         </div>
       </div>
 
-      <aside className="flex flex-col justify-between gap-6 rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-xl shadow-slate-900/5 backdrop-blur sm:p-8 dark:border-white/10 dark:bg-white/5 dark:shadow-black/20">
-        <div className="w-fit rounded-full border border-teal-200 bg-teal-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-teal-800 dark:border-teal-300/20 dark:bg-teal-300/10 dark:text-teal-200">
-          Open for full-stack product work
-        </div>
+      <aside className="hero-orbit-panel relative overflow-hidden rounded-lg">
+        
 
-        <div className="grid gap-6">
-          <div>
-            <h3 className="font-extrabold text-slate-950 dark:text-white">End-to-End Builder</h3>
-            <p className="mt-2 leading-7 text-slate-600 dark:text-slate-400">
-              I can take a product from architecture to backend APIs, frontend screens, integrations,
-              and deployment.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-extrabold text-slate-950 dark:text-white">Practical AI Systems</h3>
-            <p className="mt-2 leading-7 text-slate-600 dark:text-slate-400">
-              RAG, agents, voice, document workflows, and model integrations built around real user flows.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-extrabold text-slate-950 dark:text-white">Production-First</h3>
-            <p className="mt-2 leading-7 text-slate-600 dark:text-slate-400">
-              Stable data models, clean API contracts, and deployment pipelines that hold up under
-              real traffic.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-3">
-          {heroStats.map((item) => (
-            <div key={item.label} className="rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-slate-950/40">
-              <strong className="block text-xl font-extrabold text-slate-950 dark:text-white">{item.value}</strong>
-              <span className="text-xs font-bold leading-5 text-slate-500 dark:text-slate-400">{item.label}</span>
+        <div className="hero-orbit-stage relative h-[430px] overflow-hidden rounded-lg sm:h-[460px] lg:h-[430px]">
+          <div className="wrapper" aria-label="Rotating hero capability cards">
+            <div className="inner" style={{ '--quantity': heroOrbitCards.length } as CSSProperties}>
+              {heroOrbitCards.map((card, index) => (
+                <div
+                  key={card.title}
+                  className="card"
+                  style={{ '--index': index, '--color-card': card.color } as CSSProperties}
+                >
+                  <div className="img">
+                    <div className="card-info card-info--front">
+                      <h3>{card.title}</h3>
+                      <p>{card.detail}</p>
+                    </div>
+                    <div className="card-info card-info--back" aria-hidden="true">
+                      <h3>{card.title}</h3>
+                      <p>{card.detail}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </aside>
     </section>

@@ -110,7 +110,7 @@ export default function PortfolioInsights() {
   return (
     <>
       <div className="grid gap-6 sm:grid-cols-2">
-        <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+        <div className="ice-glass-card rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
           <div className="flex items-center gap-3">
             <FaEye className="text-lg text-teal-700 dark:text-teal-300" />
             <h3 className="font-extrabold text-slate-950 dark:text-white">Total Views</h3>
@@ -123,7 +123,7 @@ export default function PortfolioInsights() {
           </p>
         </div>
 
-        <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+        <div className="ice-glass-card rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
           <div className="flex items-center gap-3">
             <FaHeart className="text-lg text-red-500 dark:text-pink-400" />
             <h3 className="font-extrabold text-slate-950 dark:text-white">Appreciation Count</h3>
@@ -148,7 +148,7 @@ export default function PortfolioInsights() {
 
       {showNameModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-xl dark:bg-slate-950 dark:text-white">
+          <div className="ice-glass-card w-full max-w-sm rounded-lg bg-white p-6 shadow-xl dark:bg-slate-950 dark:text-white">
             <h2 className="text-lg font-extrabold">Thank you for the appreciation! 🎉</h2>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
               Enter your name (optional) so I know who appreciated this.

@@ -35,7 +35,7 @@ export default function Education() {
             University and certifications that support the engineering work.
           </h2>
         </div>
-        <span className="w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+        <span className="ice-glass-chip w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
           {educationRows.length} records
         </span>
       </div>
@@ -72,7 +72,7 @@ export default function Education() {
 
                 <div className="flex flex-col items-start gap-2 text-sm font-bold text-slate-500 dark:text-slate-400 sm:items-end sm:text-right">
                   <span>{item.meta}</span>
-                  <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-extrabold text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+                  <span className="ice-glass-chip rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-extrabold text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
                     {item.status}
                   </span>
                 </div>

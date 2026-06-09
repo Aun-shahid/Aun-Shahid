@@ -28,8 +28,8 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
 
   return (
     <article
-      className={`group cursor-pointer overflow-hidden rounded-xl border bg-white transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 dark:bg-white/5 dark:hover:shadow-black/20 ${
-        isActive ? 'border-teal-500 shadow-xl shadow-slate-900/5 dark:border-teal-300' : 'border-slate-200 dark:border-white/10'
+      className={`project-grid-card group cursor-pointer overflow-hidden rounded-xl border transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 dark:hover:shadow-black/20 ${
+        isActive ? 'border-teal-500 shadow-xl shadow-slate-900/5 dark:border-teal-300' : 'dark:border-white/10'
       }`}
       id={project.id}
       onClick={onClick}
@@ -72,7 +72,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
         </div>
       )}
 
-      <div className="p-5">
+      <div className="project-grid-card-body p-5">
         {project.screenshots && (
           <div className="mb-4">
             <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">{project.tagline}</p>
@@ -83,7 +83,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((item) => (
-            <span key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-bold text-slate-600 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-300">
+            <span key={item} className="ice-glass-chip rounded-lg border border-white/60 bg-white/55 px-2.5 py-1 text-xs font-bold text-slate-600 shadow-sm backdrop-blur dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-300">
               {item}
             </span>
           ))}
@@ -107,7 +107,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-slate-700 transition hover:border-teal-300 hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-white"
+              className="ice-glass-soft inline-flex items-center gap-2 rounded-lg border border-white/60 bg-white/60 px-3 py-2 text-xs font-extrabold text-slate-700 shadow-sm backdrop-blur transition hover:border-teal-300 hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-white"
               onClick={(e) => e.stopPropagation()}
               aria-label={`Visit ${project.name}`}
             >
@@ -133,7 +133,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
               href={project.apiUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-extrabold text-slate-950 transition hover:border-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-teal-300/60"
+              className="ice-glass-soft inline-flex items-center gap-2 rounded-lg border border-white/60 bg-white/60 px-3 py-2 text-xs font-extrabold text-slate-950 shadow-sm backdrop-blur transition hover:border-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-teal-300/60"
               onClick={(e) => e.stopPropagation()}
               aria-label={`API docs for ${project.name}`}
             >

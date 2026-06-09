@@ -44,9 +44,13 @@ export default function Projects() {
   const topProjects = visibleProjects.slice(0, 10)
 
   return (
-    <section className="grid gap-8 py-2">
+    <section className="grid gap-8 py-0">
       {/* CATEGORY FILTERS */}
-      <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Project category filters">
+      <div
+        className="mx-auto flex w-[min(1440px,calc(100%-2rem))] gap-2 overflow-x-auto pb-1 pt-8 sm:w-[min(1440px,calc(100%-3rem))] lg:pt-10"
+        role="tablist"
+        aria-label="Project category filters"
+      >
         {projectCategories.map((filter) => {
           const Icon = categoryIcons[filter]
           return (
@@ -73,7 +77,7 @@ export default function Projects() {
       </div>
 
       {/* CAROUSEL SECTION */}
-      <div className="relative overflow-hidden py-4">
+      <div className="project-carousel-stage relative py-4 sm:py-6">
         <Swiper
           key={activeFilter}
           modules={[Autoplay, EffectCoverflow, Navigation, Pagination]}
@@ -99,11 +103,11 @@ export default function Projects() {
             return (
               <SwiperSlide key={project.id} className="!h-auto !w-[90%] max-w-6xl sm:!w-[84%] xl:!w-[78%]">
                 <article
-                  className="group h-full cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-slate-950 shadow-xl shadow-slate-900/10"
+                  className="project-carousel-card group h-full cursor-pointer overflow-hidden rounded-[1.75rem] border shadow-xl shadow-slate-900/10"
                   onClick={() => setSelectedProject(project)}
                 >
                   {project.screenshots ? (
-                    <div className="relative h-full min-h-[560px] overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 p-5 sm:p-7 lg:min-h-[500px] lg:p-9">
+                    <div className="project-carousel-card-shell relative h-full min-h-[560px] overflow-hidden p-5 sm:p-7 lg:min-h-[500px] lg:p-9">
                       {project.url && (
                         <a
                           href={project.url}
@@ -197,7 +201,7 @@ export default function Projects() {
                     </div>
                   ) : (
                     <div
-                      className="relative h-full min-h-[520px] bg-cover bg-center p-5 sm:p-8 lg:min-h-[500px] lg:p-10"
+                      className="project-carousel-image-shell relative h-full min-h-[520px] bg-cover bg-center p-5 sm:p-8 lg:min-h-[500px] lg:p-10"
                       style={{ backgroundImage: `url(${visual.image})` }}
                     >
                       <div className={`absolute inset-0 bg-gradient-to-br ${visual.accent}`} />
@@ -268,7 +272,7 @@ export default function Projects() {
       </div>
 
       {/* ALL PROJECTS GRID */}
-      <div>
+      <div className="mx-auto w-[min(1440px,calc(100%-2rem))] pb-10 sm:w-[min(1440px,calc(100%-3rem))] lg:pb-14">
         <div className="mb-8">
           <h3 className="text-2xl font-extrabold text-slate-950 dark:text-white sm:text-3xl">
             Browse all {visibleProjects.length} projects

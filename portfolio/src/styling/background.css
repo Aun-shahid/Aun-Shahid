@@ -1,0 +1,41 @@
+.site-pattern-bg {
+  --pattern-size: 200px;
+  --pattern-c1: #f8fbfd;
+  --pattern-c2: #edf5f8;
+  --pattern-c3: #dfeaf0;
+  --pattern-c4: rgba(203, 213, 225, 0.56);
+  --pattern-glow-a: rgba(20, 184, 166, 0.07);
+  --pattern-glow-b: rgba(56, 189, 248, 0.05);
+  background:
+    radial-gradient(circle at 12% 8%, var(--pattern-glow-a), transparent 28rem),
+    radial-gradient(circle at 86% 18%, var(--pattern-glow-b), transparent 30rem),
+    repeating-conic-gradient(
+        from 30deg,
+        transparent 90deg 120deg,
+        var(--pattern-c4) 0deg 180deg
+      )
+      calc(0.5 * var(--pattern-size)) calc(0.5 * var(--pattern-size) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--pattern-c1) 0deg 60deg,
+      var(--pattern-c2) 0deg 120deg,
+      var(--pattern-c3) 0deg 180deg
+    );
+  background-attachment: fixed;
+  background-size:
+    auto,
+    auto,
+    var(--pattern-size) calc(var(--pattern-size) * 0.577),
+    var(--pattern-size) calc(var(--pattern-size) * 0.577);
+}
+
+.site-pattern-bg.dark,
+.dark .site-pattern-bg {
+  --pattern-size: 200px;
+  --pattern-c1: #020617;
+  --pattern-c2: #0b1120;
+  --pattern-c3: #141b2b;
+  --pattern-c4: rgba(30, 41, 59, 0.72);
+  --pattern-glow-a: rgba(20, 184, 166, 0.16);
+  --pattern-glow-b: rgba(245, 158, 11, 0.08);
+}

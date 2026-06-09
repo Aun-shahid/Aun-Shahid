@@ -72,8 +72,13 @@ function App() {
     document.documentElement.classList.toggle('dark', darkMode)
   }, [darkMode])
 
+  const mainClassName =
+    activeSection === 'projects'
+      ? 'w-full flex-1 py-0'
+      : 'mx-auto w-[min(1440px,calc(100%-2rem))] flex-1 py-8 sm:w-[min(1440px,calc(100%-3rem))] lg:py-12'
+
   return (
-    <div className={`${darkMode ? 'dark' : ''} min-h-screen bg-slate-50 text-slate-950 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100`}>
+    <div className={`${darkMode ? 'dark' : ''} site-pattern-bg flex min-h-screen flex-col bg-slate-50 text-slate-950 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100`}>
       <Navbar
         activeSection={activeSection}
         darkMode={darkMode}
@@ -81,10 +86,10 @@ function App() {
         onToggleTheme={() => setDarkMode((value) => !value)}
       />
 
-      <main className="mx-auto w-[min(1440px,calc(100%-2rem))] py-8 sm:w-[min(1440px,calc(100%-3rem))] lg:py-12">
+      <main className={mainClassName}>
         {activeSection === 'overview' && <Hero onNavigate={handleNavigate} />}
 
-        <div className={activeSection === 'overview' ? '' : 'pt-2'} aria-live="polite">
+        <div className={activeSection === 'overview' || activeSection === 'projects' ? '' : 'pt-2'} aria-live="polite">
           {activeSection === 'overview' && <Overview onNavigate={handleNavigate} />}
           {activeSection === 'experience' && <Experience />}
           {activeSection === 'education' && <Education />}

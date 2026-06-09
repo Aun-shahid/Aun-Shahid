@@ -24,7 +24,7 @@ export default function Experience() {
             Work history, internships, and production delivery.
           </h2>
         </div>
-        <span className="w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+        <span className="ice-glass-chip w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
           {timelineRows.length} milestones
         </span>
       </div>

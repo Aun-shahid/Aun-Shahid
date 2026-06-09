@@ -20,7 +20,7 @@ export default function Footer({ onNavigate }: FooterProps) {
   const github = contactLinks.find((item) => item.href.includes('github.com'))
 
   return (
-    <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950">
+    <footer className="site-glass-footer border-t border-white/50 dark:border-white/10">
       <div className="mx-auto grid w-[min(1440px,calc(100%-2rem))] gap-6 py-8 sm:w-[min(1440px,calc(100%-3rem))] lg:grid-cols-[1fr_auto_auto] lg:items-center">
         <div>
           <strong className="block font-extrabold text-slate-950 dark:text-white">Aun Shahid</strong>

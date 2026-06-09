@@ -43,7 +43,7 @@ export default function GitHubActivity() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-6 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+      <div className="ice-glass-card flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-6 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
         <FaSpinner className="animate-spin" />
         <span className="text-sm font-medium">Loading GitHub activity...</span>
       </div>
@@ -65,7 +65,7 @@ export default function GitHubActivity() {
       href={data.profile_url}
       target="_blank"
       rel="noreferrer"
-      className="block w-full min-w-0 max-w-full space-y-4 overflow-hidden rounded-lg border border-slate-200 bg-white p-4 text-center transition hover:border-teal-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-300/60 sm:p-5"
+      className="ice-glass-card block w-full min-w-0 max-w-full space-y-4 overflow-hidden rounded-lg border border-slate-200 bg-white p-4 text-center transition hover:border-teal-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-300/60 sm:p-5"
     >
       <div className="flex flex-col items-center gap-3">
         <img
