@@ -10,58 +10,6 @@ const heroName = 'Aun Shahid'
 const heroDescription =
   'I build complete software products across backend systems, modern frontends, automation, and applied AI. The work ranges from fast prototypes to production platforms with clean APIs, reliable data models, and deployable infrastructure.'
 
-const _heroOrbitCards = [
-  {
-    title: 'Product Shape',
-    detail: 'Architecture, data model, API contract',
-    color: '142, 249, 252',
-  },
-  {
-    title: 'AI Core',
-    detail: 'RAG, agents, voice, documents',
-    color: '142, 252, 204',
-  },
-  {
-    title: 'Ship Ready',
-    detail: 'Frontend, backend, cloud delivery',
-    color: '142, 252, 157',
-  },
-  {
-    title: '20+',
-    detail: 'Projects shipped',
-    color: '215, 252, 142',
-  },
-  {
-    title: '10',
-    detail: 'Live products',
-    color: '252, 252, 142',
-  },
-  {
-    title: '2+',
-    detail: 'Years in AI engineering',
-    color: '252, 208, 142',
-  },
-  {
-    title: 'Backend',
-    detail: 'APIs, databases, auth flows',
-    color: '252, 142, 142',
-  },
-  {
-    title: 'Automation',
-    detail: 'Scrapers, workflows, agents',
-    color: '252, 142, 239',
-  },
-  {
-    title: 'Frontend',
-    detail: 'Fast interfaces, clean UX',
-    color: '204, 142, 252',
-  },
-  {
-    title: 'Cloud',
-    detail: 'Deployable infrastructure',
-    color: '142, 202, 252',
-  },
-]
 
 function AnimatedLetters({
   text,
