@@ -10,7 +10,7 @@ const heroName = 'Aun Shahid'
 const heroDescription =
   'I build complete software products across backend systems, modern frontends, automation, and applied AI. The work ranges from fast prototypes to production platforms with clean APIs, reliable data models, and deployable infrastructure.'
 
-const heroOrbitCards = [
+const _heroOrbitCards = [
   {
     title: 'Product Shape',
     detail: 'Architecture, data model, API contract',
