@@ -96,16 +96,7 @@ function AnimatedLetters({
 export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section className="mb-12 grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
-      <div className="relative overflow-hidden py-8 sm:py-12 lg:py-16">
-        <div className="flex flex-wrap items-center gap-3">
-          <p className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.14em] text-teal-800 dark:border-teal-300/20 dark:bg-teal-300/10 dark:text-teal-200">
-            Full Stack Engineer
-          </p>
-          <span className="ice-glass-chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-600 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
-            Available for product-focused work
-          </span>
-        </div>
-
+      <div className="relative overflow-hidden py-3 sm:py-5 lg:py-7">
         <h1
           className="mt-6 max-w-[10ch] text-5xl font-extrabold leading-[0.95] tracking-tight text-slate-950 dark:text-white sm:text-7xl lg:text-8xl"
           aria-label={heroName}
@@ -170,29 +161,56 @@ export default function Hero({ onNavigate }: HeroProps) {
       </div>
 
       <aside className="hero-orbit-panel relative overflow-hidden rounded-lg">
-        
-
-        <div className="hero-orbit-stage relative h-[430px] overflow-hidden rounded-lg sm:h-[460px] lg:h-[430px]">
-          <div className="wrapper" aria-label="Rotating hero capability cards">
-            <div className="inner" style={{ '--quantity': heroOrbitCards.length } as CSSProperties}>
-              {heroOrbitCards.map((card, index) => (
-                <div
-                  key={card.title}
-                  className="card"
-                  style={{ '--index': index, '--color-card': card.color } as CSSProperties}
-                >
-                  <div className="img">
-                    <div className="card-info card-info--front">
-                      <h3>{card.title}</h3>
-                      <p>{card.detail}</p>
-                    </div>
-                    <div className="card-info card-info--back" aria-hidden="true">
-                      <h3>{card.title}</h3>
-                      <p>{card.detail}</p>
-                    </div>
-                  </div>
+        <div className="hero-portfolio-card">
+          <div className="portfolio-card-inner">
+            <div className="portfolio-card-header">
+              <h2>Full Stack Engineer</h2>
+              <p>Specializing in AI, Backend, & Frontend</p>
+            </div>
+            
+            <div className="portfolio-stats">
+              <div className="stat-item">
+                <span className="stat-number">20+</span>
+                <span className="stat-label">Projects Shipped</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">10</span>
+                <span className="stat-label">Live Products</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">2+</span>
+                <span className="stat-label">Years in AI</span>
+              </div>
+            </div>
+            
+            <div className="portfolio-capabilities">
+              <h3>Core Capabilities</h3>
+              <div className="capabilities-grid">
+                <div className="capability">
+                  <span className="capability-title">Product Shape</span>
+                  <span className="capability-desc">Architecture & API design</span>
                 </div>
-              ))}
+                <div className="capability">
+                  <span className="capability-title">AI Core</span>
+                  <span className="capability-desc">RAG, agents, voice, docs</span>
+                </div>
+                <div className="capability">
+                  <span className="capability-title">Backend</span>
+                  <span className="capability-desc">APIs, databases, auth</span>
+                </div>
+                <div className="capability">
+                  <span className="capability-title">Frontend</span>
+                  <span className="capability-desc">Fast UX, modern interfaces</span>
+                </div>
+                <div className="capability">
+                  <span className="capability-title">Cloud</span>
+                  <span className="capability-desc">Deployable infrastructure</span>
+                </div>
+                <div className="capability">
+                  <span className="capability-title">Automation</span>
+                  <span className="capability-desc">Scrapers, workflows, agents</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

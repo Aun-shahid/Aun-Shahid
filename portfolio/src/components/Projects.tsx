@@ -124,23 +124,23 @@ export default function Projects() {
                       <div className="relative grid min-h-[520px] gap-8 lg:min-h-[460px] lg:grid-cols-[minmax(280px,0.58fr)_minmax(360px,1.42fr)] lg:items-center">
                         <div>
                           <div className="mb-6 flex flex-wrap items-start gap-3">
-                            <p className="w-fit rounded-full border border-white/20 bg-white/15 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-white backdrop-blur">
+                            <p className="w-fit rounded-full border border-slate-300 bg-slate-200 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-slate-950 backdrop-blur dark:border-white/20 dark:bg-white/15 dark:text-white">
                               {project.featured ? 'Featured' : project.category}
                             </p>
-                            <span className="w-fit shrink-0 rounded-full border border-white/20 bg-white/15 px-4 py-2 text-xs font-extrabold uppercase text-white backdrop-blur">
+                            <span className="w-fit shrink-0 rounded-full border border-slate-300 bg-slate-200 px-4 py-2 text-xs font-extrabold uppercase text-slate-950 backdrop-blur dark:border-white/20 dark:bg-white/15 dark:text-white">
                               {project.status}
                             </span>
                           </div>
-                          <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl xl:text-5xl">
+                          <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-4xl xl:text-5xl">
                             {project.name}
                           </h3>
-                          <p className="mt-4 max-w-2xl text-sm leading-7 text-white/85 sm:text-base">{project.summary}</p>
+                          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 dark:text-white/85 sm:text-base">{project.summary}</p>
 
                           <div className="mt-6 flex flex-wrap gap-2">
                             {project.tags.slice(0, 7).map((tag) => (
                               <span
                                 key={tag}
-                                className="rounded-lg border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-bold text-white backdrop-blur"
+                                className="rounded-lg border border-slate-300 bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-950 backdrop-blur dark:border-white/20 dark:bg-white/10 dark:text-white"
                               >
                                 {tag}
                               </span>
@@ -219,18 +219,18 @@ export default function Projects() {
                       )}
                       <div className="relative flex min-h-[480px] flex-col justify-between gap-8 lg:min-h-[440px]">
                         <div className="flex flex-wrap items-start justify-between gap-3">
-                          <p className="w-fit rounded-full border border-white/20 bg-white/15 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-white backdrop-blur">
+                          <p className="w-fit rounded-full border border-slate-300 bg-slate-200 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-slate-950 backdrop-blur dark:border-white/20 dark:bg-white/15 dark:text-white">
                             {project.featured ? 'Featured' : project.category}
                           </p>
-                          <span className="w-fit shrink-0 rounded-full border border-white/20 bg-white/15 px-4 py-2 text-xs font-extrabold uppercase text-white backdrop-blur">
+                          <span className="w-fit shrink-0 rounded-full border border-slate-300 bg-slate-200 px-4 py-2 text-xs font-extrabold uppercase text-slate-950 backdrop-blur dark:border-white/20 dark:bg-white/15 dark:text-white">
                             {project.status}
                           </span>
                         </div>
                         <div>
-                          <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl xl:text-5xl">
+                          <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-4xl xl:text-5xl">
                             {project.name}
                           </h3>
-                          <p className="mt-5 max-w-3xl text-base leading-8 text-white/85 sm:text-lg">{project.summary}</p>
+                          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-white/85 sm:text-lg">{project.summary}</p>
                           <button
                             type="button"
                             onClick={(event) => {
