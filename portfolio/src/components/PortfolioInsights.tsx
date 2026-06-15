@@ -11,14 +11,6 @@ export default function PortfolioInsights() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Generate browser fingerprint for deduplication
-  const getBrowserFingerprint = () => {
-    const ua = navigator.userAgent
-    const screenRes = `${window.screen.width}x${window.screen.height}`
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-    return btoa(`${ua}|${screenRes}|${tz}`).substring(0, 16)
-  }
-
   useEffect(() => {
     const setupListeners = async () => {
       try {
@@ -39,14 +31,12 @@ export default function PortfolioInsights() {
           setViews(viewCount)
         })
 
+        // Check localStorage for this device's appreciation
+        setIsAppreciated(localStorage.getItem('portfolioAppreciated') === 'true')
+
         // Set up real-time listener for appreciations
         const unsubscribeAppreciations = portfolioInsightsService.onAppreciationsChange((appreciationList) => {
           setAppreciations(appreciationList)
-
-          // Check if current browser has already appreciated
-          const fingerprint = getBrowserFingerprint()
-          const hasAppreciated = appreciationList.some((a) => a.fingerprint === fingerprint)
-          setIsAppreciated(hasAppreciated)
         })
 
         setIsLoading(false)
@@ -81,15 +71,15 @@ export default function PortfolioInsights() {
       return
     }
     
-    const fingerprint = getBrowserFingerprint()
     const appreciation: Appreciation = {
       name: name || 'Anonymous',
-      fingerprint: fingerprint,
+      fingerprint: crypto.randomUUID(),
       timestamp: new Date().toISOString(),
     }
     
     try {
       await portfolioInsightsService.addAppreciation(appreciation)
+      localStorage.setItem('portfolioAppreciated', 'true')
       setIsAppreciated(true)
       setName('')
       setShowNameModal(false)
@@ -112,10 +102,10 @@ export default function PortfolioInsights() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="ice-glass-card rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
           <div className="flex items-center gap-3">
-            <FaEye className="text-lg text-teal-700 dark:text-teal-300" />
+            <FaEye className="text-lg text-orange-600 dark:text-teal-400" />
             <h3 className="font-extrabold text-slate-950 dark:text-white">Total Views</h3>
           </div>
-          <p className="mt-3 text-3xl font-extrabold text-teal-700 dark:text-teal-300">
+          <p className="mt-3 text-3xl font-extrabold text-orange-600 dark:text-teal-400">
             {isLoading ? '—' : views.toLocaleString()}
           </p>
           <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
@@ -160,7 +150,7 @@ export default function PortfolioInsights() {
                 placeholder="Your name (or leave blank for Anonymous)"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm placeholder-slate-400 focus:border-teal-300 focus:outline-none focus:ring-1 focus:ring-teal-300 dark:border-white/10 dark:bg-slate-900 dark:placeholder-slate-500 dark:focus:border-teal-300 dark:focus:ring-teal-300"
+                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:border-white/10 dark:bg-slate-900 dark:placeholder-slate-500 dark:focus:border-teal-400 dark:focus:ring-teal-400"
                 autoFocus
               />
               

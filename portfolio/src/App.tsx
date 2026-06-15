@@ -39,14 +39,30 @@ function pathForSection(section: SectionTabId) {
   return `${basePath}/${sectionPathById[section]}`
 }
 
+const sectionOrder: SectionTabId[] = [
+  'overview',
+  'experience',
+  'education',
+  'projects',
+  'skills',
+  'contact',
+]
+
 function App() {
   const [activeSection, setActiveSection] = useState<SectionTabId>(() => sectionFromPath(window.location.pathname))
   const [darkMode, setDarkMode] = useState(() => {
     const storedTheme = localStorage.getItem('portfolioTheme')
     return storedTheme ? storedTheme === 'dark' : true
   })
+  const [slideDirection, setSlideDirection] = useState<'animate-slide-left' | 'animate-slide-right'>('animate-slide-left')
 
   const handleNavigate = (section: SectionTabId) => {
+    const currentIndex = sectionOrder.indexOf(activeSection)
+    const nextIndex = sectionOrder.indexOf(section)
+    if (currentIndex !== -1 && nextIndex !== -1 && currentIndex !== nextIndex) {
+      setSlideDirection(nextIndex > currentIndex ? 'animate-slide-left' : 'animate-slide-right')
+    }
+
     setActiveSection(section)
 
     const nextPath = pathForSection(section)
@@ -58,13 +74,19 @@ function App() {
 
   useEffect(() => {
     const handlePopState = () => {
-      setActiveSection(sectionFromPath(window.location.pathname))
+      const nextSection = sectionFromPath(window.location.pathname)
+      const currentIndex = sectionOrder.indexOf(activeSection)
+      const nextIndex = sectionOrder.indexOf(nextSection)
+      if (currentIndex !== -1 && nextIndex !== -1 && currentIndex !== nextIndex) {
+        setSlideDirection(nextIndex > currentIndex ? 'animate-slide-left' : 'animate-slide-right')
+      }
+      setActiveSection(nextSection)
       window.scrollTo({ top: 0 })
     }
 
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
-  }, [])
+  }, [activeSection])
 
   useEffect(() => {
     localStorage.setItem('portfolioTheme', darkMode ? 'dark' : 'light')
@@ -87,15 +109,17 @@ function App() {
       />
 
       <main className={mainClassName}>
-        {activeSection === 'overview' && <Hero onNavigate={handleNavigate} />}
+        <div key={activeSection} className={`w-full ${slideDirection}`}>
+          {activeSection === 'overview' && <Hero onNavigate={handleNavigate} />}
 
-        <div className={activeSection === 'overview' || activeSection === 'projects' ? '' : 'pt-2'} aria-live="polite">
-          {activeSection === 'overview' && <Overview onNavigate={handleNavigate} />}
-          {activeSection === 'experience' && <Experience />}
-          {activeSection === 'education' && <Education />}
-          {activeSection === 'projects' && <Projects />}
-          {activeSection === 'skills' && <Skills />}
-          {activeSection === 'contact' && <Contact />}
+          <div className={activeSection === 'overview' || activeSection === 'projects' ? '' : 'pt-2'} aria-live="polite">
+            {activeSection === 'overview' && <Overview onNavigate={handleNavigate} />}
+            {activeSection === 'experience' && <Experience />}
+            {activeSection === 'education' && <Education />}
+            {activeSection === 'projects' && <Projects />}
+            {activeSection === 'skills' && <Skills />}
+            {activeSection === 'contact' && <Contact />}
+          </div>
         </div>
       </main>
 

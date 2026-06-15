@@ -35,7 +35,7 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="grid gap-2">
       {items.map((item) => (
         <li key={item} className="flex gap-3">
-          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600 dark:bg-teal-300" />
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500 dark:bg-teal-400" />
           <span>{item}</span>
         </li>
       ))}
@@ -76,7 +76,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
       <div className="project-details-rain project-details-scroll relative mx-auto max-h-[calc(100vh-2rem)] max-w-6xl overflow-y-auto rounded-2xl border border-white/35 bg-slate-50 shadow-2xl shadow-slate-950/40 dark:border-white/15 dark:bg-slate-950 sm:max-h-[calc(100vh-3rem)]">
         <div className="sticky top-0 z-40 flex items-center justify-between gap-4 border-b border-white/50 bg-white/82 px-5 py-4 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/78 sm:px-6">
           <div className="min-w-0">
-            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-teal-700 dark:text-teal-300">Project Details</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-orange-600 dark:text-teal-400">Project Details</p>
             <h2 id="project-details-title" className="truncate text-xl font-extrabold text-slate-950 dark:text-white sm:text-2xl">
               {project.name}
             </h2>
@@ -117,7 +117,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
 
               <div className="mt-7 flex flex-wrap gap-3">
                 {project.url && (
-                  <a href={project.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-teal-600 px-4 py-3 text-sm font-extrabold text-white transition hover:bg-teal-700">
+                  <a href={project.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-4 py-3 text-sm font-extrabold text-white transition hover:bg-orange-700 dark:bg-teal-600 dark:hover:bg-teal-700">
                     <FaExternalLinkAlt aria-hidden="true" />
                     View Live
                   </a>

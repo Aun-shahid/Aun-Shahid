@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { sectionTabs } from '../data/portfolioData'
 import type { SectionTabId } from '../data/portfolioData'
 
@@ -21,11 +21,43 @@ function ThemeToggleIcon({ darkMode }: { darkMode: boolean }) {
 
 export default function Navbar({ activeSection, darkMode, onNavigate, onToggleTheme }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const [coords, setCoords] = useState<{ left: number; top: number; width: number; height: number } | null>(null)
 
   function handleNav(id: SectionTabId) {
     onNavigate(id)
     setMenuOpen(false)
   }
+
+  useEffect(() => {
+    function updateCoords() {
+      const activeBtn = buttonRefs.current[activeSection]
+      const container = containerRef.current
+      if (activeBtn && container) {
+        const containerRect = container.getBoundingClientRect()
+        const btnRect = activeBtn.getBoundingClientRect()
+        setCoords({
+          left: btnRect.left - containerRect.left,
+          top: btnRect.top - containerRect.top,
+          width: btnRect.width,
+          height: btnRect.height,
+        })
+      } else {
+        setCoords(null)
+      }
+    }
+
+    // Run initially and set a short timeout to let the page settle
+    updateCoords()
+    const timeoutId = setTimeout(updateCoords, 100)
+
+    window.addEventListener('resize', updateCoords)
+    return () => {
+      clearTimeout(timeoutId)
+      window.removeEventListener('resize', updateCoords)
+    }
+  }, [activeSection])
 
   return (
     <header className="site-glass-nav sticky top-0 z-50 border-b border-white/50 transition-colors dark:border-white/10">
@@ -36,23 +68,38 @@ export default function Navbar({ activeSection, darkMode, onNavigate, onToggleTh
           onClick={() => handleNav('overview')}
           aria-label="Go to overview"
         >
-          <span className="text-base font-extrabold leading-none tracking-tight text-slate-950 dark:text-white">Aun Shahid</span>
-          <span className="hidden text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-teal-700 dark:text-teal-300 sm:block">
+          <span className="text-base font-bold leading-none tracking-tight text-slate-950 dark:text-white">Aun Shahid</span>
+          <span className="hidden text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-orange-600 dark:text-teal-400 sm:block">
             Full Stack Engineer
           </span>
         </button>
 
-        <nav className="hidden items-center justify-end gap-1 md:flex" aria-label="Site sections">
+        <div ref={containerRef} className="relative hidden items-center justify-end gap-1 md:flex">
+          {coords && (
+            <div
+              className="absolute rounded-lg border border-orange-600 bg-orange-600/5 transition-all duration-300 ease-out pointer-events-none dark:border-teal-400/50 dark:bg-teal-500/10"
+              style={{
+                left: `${coords.left}px`,
+                top: `${coords.top}px`,
+                width: `${coords.width}px`,
+                height: `${coords.height}px`,
+              }}
+            />
+          )}
+
           {sectionTabs.map((link) => {
             const Icon = link.icon
             return (
             <button
               key={link.id}
+              ref={(el) => {
+                buttonRefs.current[link.id] = el
+              }}
               type="button"
-              className={`inline-flex items-center gap-2 rounded-lg px-3.5 py-2.5 text-sm font-bold transition-colors ${
+              className={`relative z-10 inline-flex items-center gap-2 rounded-lg border border-transparent px-3.5 py-2.5 text-sm font-semibold transition-colors duration-300 ${
                 activeSection === link.id
-                  ? 'bg-slate-950 text-white shadow-lg shadow-slate-950/10 dark:bg-teal-300 dark:text-slate-950 dark:shadow-teal-300/10'
-                  : 'text-slate-700 hover:bg-white/55 hover:text-slate-950 focus-visible:bg-white/55 focus-visible:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:bg-white/10 dark:focus-visible:text-white'
+                  ? 'text-orange-600 dark:text-teal-300'
+                  : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
               }`}
               onClick={() => handleNav(link.id)}
             >
@@ -63,13 +110,13 @@ export default function Navbar({ activeSection, darkMode, onNavigate, onToggleTh
           })}
           <button
             type="button"
-            className="ml-1 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/60 bg-white/55 text-slate-800 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-200"
+            className="ml-1 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/60 bg-white/55 text-slate-800 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-orange-300 hover:text-orange-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-200"
             aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             onClick={onToggleTheme}
           >
             <ThemeToggleIcon darkMode={darkMode} />
           </button>
-        </nav>
+        </div>
 
         <button
           type="button"
@@ -95,10 +142,10 @@ export default function Navbar({ activeSection, darkMode, onNavigate, onToggleTh
             <button
               key={link.id}
               type="button"
-              className={`inline-flex items-center gap-2 rounded-lg px-3 py-3 text-left text-sm font-bold ${
+              className={`inline-flex items-center gap-2 rounded-lg border px-3 py-3 text-left text-sm font-semibold transition-all ${
                 activeSection === link.id
-                  ? 'bg-slate-950 text-white dark:bg-teal-300 dark:text-slate-950'
-                  : 'text-slate-700 hover:bg-white/55 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white'
+                  ? 'border-orange-600 bg-orange-600/5 text-orange-600 dark:border-teal-400/50 dark:bg-teal-500/10 dark:text-teal-300'
+                  : 'border-transparent text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white'
               }`}
               onClick={() => handleNav(link.id)}
             >

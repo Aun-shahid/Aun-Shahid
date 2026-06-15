@@ -61,8 +61,8 @@ export default function Projects() {
               aria-selected={activeFilter === filter}
               className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-extrabold transition ${
                 activeFilter === filter
-                  ? 'border-teal-700 bg-teal-700 text-white dark:border-teal-300 dark:bg-teal-300 dark:text-slate-950'
-                  : 'border-slate-200 bg-white text-slate-600 hover:border-teal-300 hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:border-teal-300/60 dark:hover:text-teal-200'
+                  ? 'border-orange-600 bg-orange-600 text-white dark:border-teal-300 dark:bg-teal-300 dark:text-slate-950'
+                  : 'border-slate-200 bg-white text-slate-600 hover:border-orange-300 hover:text-orange-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:border-teal-300/60 dark:hover:text-teal-200'
               }`}
               onClick={() => {
                 setActiveFilter(filter)
@@ -120,7 +120,7 @@ export default function Projects() {
                           <FaExternalLinkAlt aria-hidden="true" />
                         </a>
                       )}
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(45,212,191,0.22),transparent_32%),radial-gradient(circle_at_86%_8%,rgba(59,130,246,0.2),transparent_28%)]" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(249,115,22,0.15),transparent_32%),radial-gradient(circle_at_86%_8%,rgba(251,146,60,0.08),transparent_28%)] dark:bg-[radial-gradient(circle_at_22%_18%,rgba(45,212,191,0.22),transparent_32%),radial-gradient(circle_at_86%_8%,rgba(59,130,246,0.2),transparent_28%)]" />
                       <div className="relative grid min-h-[520px] gap-8 lg:min-h-[460px] lg:grid-cols-[minmax(280px,0.58fr)_minmax(360px,1.42fr)] lg:items-center">
                         <div>
                           <div className="mb-6 flex flex-wrap items-start gap-3">
@@ -131,7 +131,7 @@ export default function Projects() {
                               {project.status}
                             </span>
                           </div>
-                          <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-4xl xl:text-5xl">
+                          <h3 className="max-w-3xl text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl xl:text-5xl">
                             {project.name}
                           </h3>
                           <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 dark:text-white/85 sm:text-base">{project.summary}</p>
@@ -164,7 +164,7 @@ export default function Projects() {
                                   target="_blank"
                                   rel="noreferrer"
                                   onClick={(event) => event.stopPropagation()}
-                                  className="inline-flex items-center gap-2 rounded-lg bg-teal-600 px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-teal-700"
+                                  className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-orange-700 dark:bg-teal-600 dark:hover:bg-teal-700"
                                 >
                                   <FaExternalLinkAlt aria-hidden="true" />
                                   View Live
@@ -227,7 +227,7 @@ export default function Projects() {
                           </span>
                         </div>
                         <div>
-                          <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-4xl xl:text-5xl">
+                          <h3 className="max-w-3xl text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl xl:text-5xl">
                             {project.name}
                           </h3>
                           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-white/85 sm:text-lg">{project.summary}</p>
@@ -237,7 +237,7 @@ export default function Projects() {
                               event.stopPropagation()
                               setSelectedProject(project)
                             }}
-                            className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
+                            className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-slate-50"
                           >
                             View Details
                           </button>

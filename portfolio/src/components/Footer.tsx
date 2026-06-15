@@ -23,7 +23,7 @@ export default function Footer({ onNavigate }: FooterProps) {
     <footer className="site-glass-footer border-t border-white/50 dark:border-white/10">
       <div className="mx-auto grid w-[min(1440px,calc(100%-2rem))] gap-6 py-8 sm:w-[min(1440px,calc(100%-3rem))] lg:grid-cols-[1fr_auto_auto] lg:items-center">
         <div>
-          <strong className="block font-extrabold text-slate-950 dark:text-white">Aun Shahid</strong>
+          <strong className="block font-bold text-slate-900 dark:text-white">Aun Shahid</strong>
           <p className="mt-1 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-400">
             Full Stack Engineer building reliable AI products, APIs, and web platforms.
           </p>
@@ -34,7 +34,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             <button
               key={link.id}
               type="button"
-              className="text-sm font-bold text-slate-500 transition hover:text-teal-700 dark:text-slate-400 dark:hover:text-teal-200"
+              className="text-sm font-bold text-slate-500 transition hover:text-orange-700 dark:text-slate-400 dark:hover:text-teal-200"
               onClick={() => onNavigate(link.id)}
             >
               {link.label}
@@ -44,19 +44,19 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         <div className="flex flex-wrap gap-4">
           {email && (
-            <a className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 transition hover:text-teal-700 dark:text-slate-400 dark:hover:text-teal-200" href={email.href}>
+            <a className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 transition hover:text-orange-700 dark:text-slate-400 dark:hover:text-teal-200" href={email.href}>
               <FaEnvelope aria-hidden="true" />
               Email
             </a>
           )}
           {linkedIn && (
-            <a className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 transition hover:text-teal-700 dark:text-slate-400 dark:hover:text-teal-200" href={linkedIn.href} target="_blank" rel="noreferrer">
+            <a className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 transition hover:text-orange-700 dark:text-slate-400 dark:hover:text-teal-200" href={linkedIn.href} target="_blank" rel="noreferrer">
               <FaLinkedin aria-hidden="true" />
               LinkedIn
             </a>
           )}
           {github && (
-            <a className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 transition hover:text-teal-700 dark:text-slate-400 dark:hover:text-teal-200" href={github.href} target="_blank" rel="noreferrer">
+            <a className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 transition hover:text-orange-700 dark:text-slate-400 dark:hover:text-teal-200" href={github.href} target="_blank" rel="noreferrer">
               <FaGithub aria-hidden="true" />
               GitHub
             </a>

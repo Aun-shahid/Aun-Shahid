@@ -65,7 +65,7 @@ export default function GitHubActivity() {
       href={data.profile_url}
       target="_blank"
       rel="noreferrer"
-      className="ice-glass-card block w-full min-w-0 max-w-full space-y-4 overflow-hidden rounded-lg border border-slate-200 bg-white p-4 text-center transition hover:border-teal-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-300/60 sm:p-5"
+      className="ice-glass-card block w-full min-w-0 max-w-full space-y-4 overflow-hidden rounded-lg border border-slate-200 bg-white p-4 text-center transition hover:border-orange-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-300/60 sm:p-5"
     >
       <div className="flex flex-col items-center gap-3">
         <img
@@ -97,19 +97,19 @@ export default function GitHubActivity() {
 
       <div className="grid grid-cols-3 gap-3 border-t border-slate-200 pt-4 dark:border-white/10">
         <div className="text-center">
-          <p className="text-base font-extrabold text-teal-700 dark:text-teal-300">
+          <p className="text-base font-extrabold text-orange-600 dark:text-teal-400">
             {data.public_repos}
           </p>
           <p className="text-xs text-slate-600 dark:text-slate-400">Repos</p>
         </div>
         <div className="text-center">
-          <p className="text-base font-extrabold text-teal-700 dark:text-teal-300">
+          <p className="text-base font-extrabold text-orange-600 dark:text-teal-400">
             {data.followers}
           </p>
           <p className="text-xs text-slate-600 dark:text-slate-400">Followers</p>
         </div>
         <div className="text-center">
-          <p className="text-base font-extrabold text-teal-700 dark:text-teal-300">
+          <p className="text-base font-extrabold text-orange-600 dark:text-teal-400">
             {data.following}
           </p>
           <p className="text-xs text-slate-600 dark:text-slate-400">Following</p>

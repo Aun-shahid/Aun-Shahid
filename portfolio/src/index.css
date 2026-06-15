@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -37,7 +37,7 @@ body {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(15, 118, 110, 0.72) rgba(226, 232, 240, 0.9);
+  scrollbar-color: rgba(234, 88, 12, 0.72) rgba(226, 232, 240, 0.9);
 }
 
 html.dark {
@@ -53,13 +53,13 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #14b8a6, #0f766e);
+  background: linear-gradient(180deg, #f97316, #ea580c);
   border: 3px solid #f8fafc;
   border-radius: 999px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #0f766e, #115e59);
+  background: linear-gradient(180deg, #ea580c, #c2410c);
 }
 
 html::-webkit-scrollbar-corner {
@@ -104,7 +104,7 @@ html.dark::-webkit-scrollbar-corner {
   height: 0.86em;
   margin-left: 0.08em;
   border-radius: 999px;
-  background: #0f766e;
+  background: #ea580c;
   animation: caret-blink 1s steps(2, start) infinite;
   vertical-align: -0.05em;
 }
@@ -147,15 +147,20 @@ select {
 }
 
 h1,
-h2 {
-  font-weight: 800;
+h2,
+h3 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
 }
 
 h1 {
   line-height: 1;
 }
 h2 {
-  line-height: 1.15;
+  line-height: 1.2;
+}
+h3 {
+  line-height: 1.3;
 }
 p {
   margin: 0;
@@ -171,7 +176,7 @@ a {
 }
 
 ::selection {
-  background: rgba(20, 184, 166, 0.22);
+  background: rgba(234, 88, 12, 0.15);
   color: #0f172a;
 }
 
@@ -305,4 +310,35 @@ a {
 
 .dark .react-github-calendar__day[data-level="4"] {
   fill: #39d353;
+}
+
+/* Tab/Page sliding transition animation rules */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slideInFromRight 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInFromLeft 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

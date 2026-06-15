@@ -7,7 +7,7 @@ const educationRows = [
     title: 'Bachelor of Software Engineering',
     meta: 'National University of Science and Technology · Islamabad, Pakistan',
     icon: FaGraduationCap,
-    accent: 'bg-blue-500',
+    accent: 'bg-orange-500 dark:bg-teal-500',
     status: 'Expected 2026',
     description:
       'Software engineering degree focused on systems design, databases, backend architecture, web engineering, and production-oriented product development.',
@@ -17,7 +17,7 @@ const educationRows = [
     title: certification.title,
     meta: certification.issuer,
     icon: FaCertificate,
-    accent: 'bg-amber-400',
+    accent: 'bg-orange-400 dark:bg-teal-400',
     status: certification.date,
     description: 'Certification covering practical AI foundations and applied generative AI workflows.',
   },
@@ -26,22 +26,17 @@ const educationRows = [
 export default function Education() {
   return (
     <section className="py-2">
-      <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="mb-3 w-fit rounded-full border border-teal-200 bg-teal-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.14em] text-teal-800 dark:border-teal-300/20 dark:bg-teal-300/10 dark:text-teal-200">
-            Education
-          </p>
-          <h2 className="max-w-4xl text-3xl font-extrabold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-            University and certifications that support the engineering work.
-          </h2>
-        </div>
-        <span className="ice-glass-chip w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
-          {educationRows.length} records
-        </span>
+      <div className="mb-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-orange-600 dark:text-teal-400">
+          Education
+        </p>
+        <h2 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+          University and certifications that support the engineering work.
+        </h2>
       </div>
 
       <div className="relative">
-        <div className="absolute bottom-0 left-[12px] top-0 w-px bg-gradient-to-b from-blue-500 to-amber-400 sm:left-[41px]" />
+        <div className="absolute bottom-0 left-[12px] top-0 w-px bg-gradient-to-b from-orange-500 to-orange-300 dark:from-teal-400 dark:to-teal-600/40 sm:left-[41px]" />
 
         <div className="divide-y divide-slate-200/80 dark:divide-white/10">
           {educationRows.map((item) => {
@@ -62,7 +57,7 @@ export default function Education() {
                   <div className="mb-2 text-xs font-extrabold uppercase tracking-[0.14em] text-slate-400 sm:hidden">
                     {item.year}
                   </div>
-                  <h3 className="text-lg font-extrabold text-slate-950 transition group-hover:text-teal-700 dark:text-white dark:group-hover:text-teal-200 sm:text-xl">
+                  <h3 className="text-lg font-semibold text-slate-900 transition group-hover:text-orange-700 dark:text-white dark:group-hover:text-teal-300 sm:text-xl">
                     {item.title}
                   </h3>
                   <p className="mt-3 max-w-3xl leading-7 text-slate-600 dark:text-slate-400">

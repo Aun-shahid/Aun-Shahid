@@ -1,7 +1,11 @@
 import { FaBriefcase } from 'react-icons/fa'
 import { experience } from '../data/portfolioData'
 
-const markerAccents = ['bg-teal-400', 'bg-violet-400', 'bg-blue-500']
+const markerAccents = [
+  'bg-orange-500 dark:bg-teal-500',
+  'bg-orange-600 dark:bg-teal-600',
+  'bg-orange-400 dark:bg-teal-400'
+]
 
 const timelineRows = experience.map((job, index) => ({
     year: job.period.split(' - ')[0].split('/')[1] ?? job.period,
@@ -15,22 +19,17 @@ const timelineRows = experience.map((job, index) => ({
 export default function Experience() {
   return (
     <section className="py-2">
-      <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="mb-3 w-fit rounded-full border border-teal-200 bg-teal-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.14em] text-teal-800 dark:border-teal-300/20 dark:bg-teal-300/10 dark:text-teal-200">
-            Experience Timeline
-          </p>
-          <h2 className="max-w-4xl text-3xl font-extrabold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-            Work history, internships, and production delivery.
-          </h2>
-        </div>
-        <span className="ice-glass-chip w-fit rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
-          {timelineRows.length} milestones
-        </span>
+      <div className="mb-10">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-orange-600 dark:text-teal-400">
+          Experience
+        </p>
+        <h2 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+          Work history, internships, and production delivery.
+        </h2>
       </div>
 
       <div className="relative">
-        <div className="absolute bottom-0 left-[12px] top-0 w-px bg-gradient-to-b from-blue-500 via-teal-400 to-violet-500 sm:left-[41px]" />
+        <div className="absolute bottom-0 left-[12px] top-0 w-px bg-gradient-to-b from-orange-500 to-orange-300 dark:from-teal-400 dark:to-teal-600/40 sm:left-[41px]" />
 
         <div className="divide-y divide-slate-200/80 dark:divide-white/10">
           {timelineRows.map((item) => {
@@ -51,7 +50,7 @@ export default function Experience() {
                   <div className="mb-2 text-xs font-extrabold uppercase tracking-[0.14em] text-slate-400 sm:hidden">
                     {item.year}
                   </div>
-                  <h3 className="text-lg font-extrabold text-slate-950 transition group-hover:text-teal-700 dark:text-white dark:group-hover:text-teal-200 sm:text-xl">
+                  <h3 className="text-lg font-semibold text-slate-900 transition group-hover:text-orange-700 dark:text-white dark:group-hover:text-teal-300 sm:text-xl">
                     {item.title}
                   </h3>
                   <p className="mt-3 max-w-3xl leading-7 text-slate-600 dark:text-slate-400">

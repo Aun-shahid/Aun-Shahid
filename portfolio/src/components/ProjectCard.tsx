@@ -17,7 +17,7 @@ const statusLabels: Record<Project['status'], string> = {
 }
 
 const statusColors: Record<Project['status'], string> = {
-  live: 'border-teal-200 bg-teal-50 text-teal-800',
+  live: 'border-orange-200 bg-orange-50 text-orange-800 dark:border-teal-700/50 dark:bg-teal-900/30 dark:text-teal-300',
   demo: 'border-blue-200 bg-blue-50 text-blue-700',
   'in-progress': 'border-amber-200 bg-amber-50 text-amber-700',
   archived: 'border-slate-200 bg-white text-slate-500',
@@ -28,8 +28,8 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
 
   return (
     <article
-      className={`project-grid-card group cursor-pointer overflow-hidden rounded-xl border transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 dark:hover:shadow-black/20 ${
-        isActive ? 'border-teal-500 shadow-xl shadow-slate-900/5 dark:border-teal-300' : 'dark:border-white/10'
+      className={`project-grid-card group cursor-pointer overflow-hidden rounded-xl border transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 dark:focus-visible:outline-teal-400 dark:hover:shadow-black/20 ${
+        isActive ? 'border-orange-500 shadow-xl shadow-slate-900/5 dark:border-teal-300' : 'dark:border-white/10'
       }`}
       id={project.id}
       onClick={onClick}
@@ -66,7 +66,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
             </div>
             <div>
               <p className="text-sm font-semibold text-white/75">{project.tagline}</p>
-              <h3 className="mt-1 text-xl font-extrabold tracking-tight text-white">{project.name}</h3>
+              <h3 className="mt-1 text-xl font-bold tracking-tight text-white">{project.name}</h3>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
         {project.screenshots && (
           <div className="mb-4">
             <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">{project.tagline}</p>
-            <h3 className="mt-1 text-xl font-extrabold tracking-tight text-slate-950 dark:text-white">{project.name}</h3>
+            <h3 className="mt-1 text-xl font-bold tracking-tight text-slate-900 dark:text-white">{project.name}</h3>
           </div>
         )}
         <p className="leading-7 text-slate-600 dark:text-slate-400">{project.summary}</p>
@@ -92,7 +92,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
         <div className="mt-5 flex flex-wrap gap-2">
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-3 py-2 text-xs font-extrabold text-white transition hover:bg-teal-800"
+            className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-3 py-2 text-xs font-extrabold text-white transition hover:bg-orange-700 dark:bg-teal-700 dark:hover:bg-teal-800"
             onClick={(e) => {
               e.stopPropagation()
               onClick()
@@ -107,7 +107,7 @@ export default function ProjectCard({ project, isActive, onClick }: ProjectCardP
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="ice-glass-soft inline-flex items-center gap-2 rounded-lg border border-white/60 bg-white/60 px-3 py-2 text-xs font-extrabold text-slate-700 shadow-sm backdrop-blur transition hover:border-teal-300 hover:text-teal-800 dark:border-white/10 dark:bg-white/5 dark:text-white"
+              className="ice-glass-soft inline-flex items-center gap-2 rounded-lg border border-white/60 bg-white/60 px-3 py-2 text-xs font-extrabold text-slate-700 shadow-sm backdrop-blur transition hover:border-orange-300 hover:text-orange-800 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-teal-300/60"
               onClick={(e) => e.stopPropagation()}
               aria-label={`Visit ${project.name}`}
             >
