@@ -57,7 +57,11 @@ const stackLayers = [
 ]
 
 const toneClasses: Record<string, { chip: string; bar: string; card: string }> = {
-  teal: { chip: 'border-teal-300/40 bg-teal-300/10 text-teal-100', bar: 'bg-teal-300/70', card: 'ui-3d-tone-teal' },
+  teal: { 
+    chip: 'border-orange-200 bg-orange-50 text-orange-600 dark:border-teal-300/40 dark:bg-teal-300/10 dark:text-teal-100', 
+    bar: 'bg-orange-500/70 dark:bg-teal-300/70', 
+    card: 'ui-3d-tone-teal' 
+  },
 }
 
 type OverviewProps = {

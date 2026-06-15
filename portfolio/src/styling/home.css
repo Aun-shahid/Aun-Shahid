@@ -303,6 +303,10 @@
 
 .capability-rail {
   scrollbar-width: thin;
+  scrollbar-color: rgba(234, 88, 12, 0.72) rgba(148, 163, 184, 0.16);
+}
+
+.dark .capability-rail {
   scrollbar-color: rgba(20, 184, 166, 0.72) rgba(148, 163, 184, 0.16);
 }
 
@@ -316,8 +320,12 @@
 }
 
 .capability-rail::-webkit-scrollbar-thumb {
-  background: #14b8a6;
+  background: #ea580c;
   border-radius: 999px;
+}
+
+.dark .capability-rail::-webkit-scrollbar-thumb {
+  background: #14b8a6;
 }
 
 .ui-3d-parent {
@@ -355,8 +363,13 @@
   color: #e2e8f0;
 }
 
-/* Single disciplined teal tone — all cards use this */
+/* Single disciplined tone — orange in light mode, teal in dark mode */
 .ui-3d-tone-teal {
+  --ui-card-accent: #f97316;
+  --ui-card-accent-2: #ea580c;
+}
+
+.dark .ui-3d-tone-teal {
   --ui-card-accent: #14b8a6;
   --ui-card-accent-2: #0d9488;
 }
