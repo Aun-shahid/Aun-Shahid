@@ -20,7 +20,7 @@ export default function Contact() {
           <p className="leading-8 text-slate-600 dark:text-slate-400">
             I'm a Full Stack AI Engineer available for freelance projects, contract work, and full-time roles.
             Whether you need an AI-powered product built from scratch, an existing system scaled up, or
-            a technical co-founder for your startup — let's talk.
+            a technical co-founder for your startup, let's talk.
           </p>
         </div>
 

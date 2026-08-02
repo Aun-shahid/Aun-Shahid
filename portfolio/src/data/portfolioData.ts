@@ -69,8 +69,8 @@ export const sectionTabs: Array<{ id: SectionTabId; label: string; icon: IconTyp
 ]
 
 export const heroStats = [
-  { value: '20+', label: 'Projects shipped' },
   { value: '10', label: 'Live products' },
+  { value: '20+', label: 'Client projects delivered' },
   { value: '2+', label: 'Years in AI engineering' },
 ]
 

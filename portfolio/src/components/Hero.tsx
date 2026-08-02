@@ -8,7 +8,7 @@ type HeroProps = {
 
 const heroName = 'Aun Shahid'
 const heroDescription =
-  'I build complete software products across backend systems, modern frontends, automation, and applied AI. The work ranges from fast prototypes to production platforms with clean APIs, reliable data models, and deployable infrastructure.'
+  'Plenty of AI features look great in a demo and fall over on real data or real traffic. I build the ones that hold up: RAG systems, agents, and voice tools, with the backend and infrastructure that keeps them running. Ten of them are live right now.'
 
 
 function AnimatedLetters({
@@ -122,13 +122,13 @@ export default function Hero({ onNavigate }: HeroProps) {
         {/* Stats */}
         <div className="mb-6 grid grid-cols-3 gap-3">
           {[
-            { value: '20+', label: 'Projects' },
             { value: '10', label: 'Live products' },
+            { value: '20+', label: 'Client projects delivered' },
             { value: '2+ yrs', label: 'AI experience' },
           ].map((stat) => (
             <div key={stat.label} className="rounded-lg bg-orange-50/70 p-3 text-center dark:bg-teal-300/8">
               <p className="text-xl font-bold text-orange-700 dark:text-teal-300">{stat.value}</p>
-              <p className="mt-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{stat.label}</p>
+              <p className="mt-0.5 text-[0.65rem] font-semibold uppercase leading-tight tracking-wide text-slate-500 dark:text-slate-400">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -147,7 +147,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500 dark:bg-teal-400" aria-hidden="true" />
                 <span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">{item.area}</span>
-                  <span className="ml-1 text-slate-500 dark:text-slate-400">— {item.detail}</span>
+                  <span className="ml-1 text-slate-500 dark:text-slate-400">· {item.detail}</span>
                 </span>
               </li>
             ))}

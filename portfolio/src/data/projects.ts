@@ -207,7 +207,7 @@ const projectEntries: ProjectEntry[] = [
     tagline: 'AI Gmail Assistant for Luxury Brands',
     category: 'AI Systems',
     summary:
-      'AI-powered Gmail customer service assistant for luxury brands. Uses Claude AI to generate brand-voice-consistent email draft replies with Shopify order context enrichment. All AI outputs are Gmail drafts for human review — never auto-sends.',
+      'AI-powered Gmail customer service assistant for luxury brands. Uses Claude AI to generate brand-voice-consistent email draft replies with Shopify order context enrichment. All AI outputs are Gmail drafts for human review, never auto-sends.',
     tags: ['React', 'TypeScript', 'FastAPI', 'MongoDB', 'Anthropic Claude', 'Gmail API', 'Shopify API', 'Stripe', 'Docker', 'Railway'],
     details: [
       'Claude-powered email draft generation analyzing thread tone and customer sentiment.',
@@ -215,7 +215,7 @@ const projectEntries: ProjectEntry[] = [
       'Gmail OAuth2 integration with automatic token refresh (PKCE).',
       'Shopify context enrichment: real-time order/customer/product data injected into Claude prompts.',
       'Background email polling every 5 minutes: sync → classify → draft → thread analysis.',
-      'Never auto-sends — all AI outputs are Gmail drafts labeled for human review.',
+      'Never auto-sends. All AI outputs are Gmail drafts labeled for human review.',
       'TOTP 2FA, RBAC, and Stripe subscription management.',
     ],
     url: 'https://nebuluxury.com',
@@ -326,7 +326,7 @@ const projectEntries: ProjectEntry[] = [
       'AI coaching platform that turns personal and professional roadblocks into structured action plans. Combines conversational AI, subscription lifecycle management, and persistent user context.',
     tags: ['React', 'TypeScript', 'FastAPI', 'MongoDB', 'OpenAI', 'Stripe', 'Zustand', 'i18next'],
     details: [
-      'Persistent conversation objects — stateful coaching sessions, not one-off prompts.',
+      'Persistent conversation objects for stateful coaching sessions, not one-off prompts.',
       'Dual response modes: standard completions and real-time streaming.',
       'Subscription-aware usage/message quotas with Stripe billing.',
       'Axios interceptors with refresh-token queuing to prevent race conditions.',
@@ -437,7 +437,7 @@ const projectEntries: ProjectEntry[] = [
     tags: ['Next.js', 'TypeScript', 'FastAPI', 'MongoDB', 'OpenAI', 'Google Gemini', 'DeepSeek', 'Stripe', 'Railway'],
     details: [
       '30+ structured field extraction: education, experience, certifications, languages, and more.',
-      'Multi-provider LLM: OpenAI, Gemini, DeepSeek — swappable via environment variable.',
+      'Multi-provider LLM: OpenAI, Gemini, DeepSeek, swappable via environment variable.',
       'Vision fallback for complex PDF layouts (rasterized pages sent to vision-capable models).',
       'Optional data sanitization (second LLM pass for garbled text).',
       'Text coverage metrics: character/word count, transfer percentage, integrity flags.',
